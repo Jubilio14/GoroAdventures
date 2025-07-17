@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery & Review</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Gabarito";
+            background-color: #27235D;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            height: 90px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1A1A3D !important;
+            margin: 0 10px;
+        }
+
+        .btn-journey {
+            border: 2px solid #1A1A3D;
+            font-weight: bold;
+            font-size: 18px;
+            color: #1A1A3D;
+            border-radius: 10px;
+            padding: 6px 16px;
+            text-decoration: none;
+        }
+
+        .btn-journey:hover {
+            background-color: #1A1A3D;
+            color: white;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            color: #1A1A3D;
+            cursor: pointer;
+        }
+
+        /* Gallery & Review */
+        .gr {
+            position: relative;
+            background: url('asset/images/snorkling.jpg') no-repeat center center/cover;
+            height: 757px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .gr-overlay {
+            background: rgba(0, 0, 0, 0.400);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .gr-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .gr-content h1 {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 100%;
+        }
+
+        /* Relive */
+        .relive {
+            color: white;
+        }
+
+        .relive-title {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 100%;
+        }
+
+        .relive-divider {
+            width: 80%;
+            height: 4px;
+            background-color: white;
+            border-top: 5px solid;
+            margin: 10px auto 30px;
+        }
+
+        .relive-content p {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .relive-content .italic-text {
+            font-family: Arial;
+            font-size: 32px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* Gallery */
+        .gallery{
+            color: white;
+        }
+
+        .gallery-title {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 100%;
+        }
+
+        .gallery-divider {
+            width: 80%;
+            height: 4px;
+            background-color: white;
+            border-top: 5px solid;
+            margin: 10px auto 30px;
+        }
+
+        .fade-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .fade-image {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 0;
+        }
+
+        .fade-image.active {
+            opacity: 1;
+            z-index: 1; 
+        }
+
+        .overlay-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 97px;
+            z-index: 2;
+        }
+
+        .overlay2-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 32px;
+            z-index: 2;
+        }
+
+        .row.gap-3 > div {
+            padding: 0;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem;
+        }
+
+        /* Review2 */
+        .review2{
+            color: white;
+        }
+
+        .review2-title {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 100%;
+        }
+
+        .review2-divider {
+            width: 80%;
+            height: 4px;
+            background-color: white;
+            border-top: 5px solid;
+            margin: 10px auto 30px;
+        }
+
+        .review2-card {
+            background-color:white;
+            color:black;
+            height: 227px;
+            width: 414px;
+            display: flex;
+            border-radius: 12px;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .review2-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-size: 14px;
+            font-family: Heebo;
+        }
+
+        .review2-left {
+            display: flex;
+            gap: 10px;
+        }
+
+        .review2-right {
+            font-size: 30px;
+        }
+
+        .review2-header .review2-left img {
+            height: 32px;
+            width: 32px;
+        }
+
+        .review2-header .review2-left small {
+            margin-top: 5px;
+            padding: 2px 8px 2px 8px;
+            width: 64px;
+            height: 25px;
+        }
+
+        .review2 p {
+            display: flex;
+            align-items: start;
+            text-align: justify;
+            font-family: Heebo;
+            font-size: 14px;
+            line-height: 150%;
+            margin: 8px 10px;
+        }
+
+        /* footer */
+        .footer {
+            background-color: white;
+            padding: 20px;
+            color: #27235D;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        /* footer */
+        .footer-column {
+            flex: 1 1 150px;
+        }
+
+        .footer-column h5 {
+            font-size: 16px;
+            font-style: bold;
+            font-weight: 800;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        
+        .footer-divider {
+            width: 1px;
+            background-color: #27235D;
+            height: 25  0px;
+            margin: 0 30px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #27235D;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            border: 2px solid #27235D;
+            border-radius: 4px;
+            gap: 10px;
+            height: 34px;
+            width: 34px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .social-icons img {
+            height: 15px;
+            width: 15px;
+        }
+
+        /* Whatsapp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            z-index: 999;
+            padding: 10px;
+        }
+
+        .whatsapp-float img {
+            width: 40px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+            <img src="asset/images/Logo.png" alt="Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="divesites.html">Dive Sites</a></li>
+                <li class="nav-item"><a class="nav-link" href="deals.html">Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="course.html">Course</a></li>
+                <li class="nav-item"><a class="nav-link" href="gr.html">Galery & Review</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-search search-icon"></i>
+                <a href="deals.html" class="btn btn-journey">Start Your Journey</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Whatsapp -->
+    <a href="https://wa.me/6281242963516" class="whatsapp-float" target="_blank">
+        <img src="asset/icon/WA.png" alt="WhatsApp">
+    </a>
+
+    <!-- G&R Section -->
+     <section class="gr">
+        <div class="gr-overlay"></div>
+            <div class="gr-content">
+                <h1>
+                Gallery & Review
+                </h1>
+            </div>
+        </div>
+     </section>
+
+     <section class="relive text-center py-4">
+        <h2 class="relive-title">Relive the Magic Through Stories and Snapshots</h2>
+        <div class="relive-divider"></div>
+        <div class="relive-content">
+            <p>
+                Step into the world of shared journeys and capture moments. From glowing reviews to stunning travel snaps, <br>
+                explore how couples just like you turned their dream getaways into unforgattable memories.
+            </p>
+            <p class="italic-text">
+                Feel the joy, see the beauty and imagine what yours could be.
+            </p>
+        </div>
+     </section>
+
+     <section class="gallery text-center py-4" id="gallery">
+        <h2 class="gallery-title">Gallery</h2>
+        <div class="gallery-divider"></div>
+        <div class="container">
+            <!-- Baris 1 - Gambar besar -->
+            <div class="fade-container mb-4 mx-auto" style="width:100%; height:700px; margin:auto;">
+                <img src="asset/images/openwater2.png" class="fade-image active">
+                <img src="asset/images/openwater.jpg" class="fade-image">
+                <img src="asset/images/big2.jpg" class="fade-image">
+                <img src="asset/images/big4.webp" class="fade-image">
+                <img src="asset/images/big5.jpg" class="fade-image">
+                <div class="overlay-text">Diving</div>
+            </div>
+
+                <!-- Baris 2 -->
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <div class="fade-container" style="width: 406px; height: 250px;">
+                        <img src="asset/images/fishing1.jpg" class="fade-image active">
+                        <img src="asset/images/fishing2.webp" class="fade-image">
+                        <img src="asset/images/fishing3.jpg" class="fade-image">
+                        <img src="asset/images/fishing4.jpg" class="fade-image">
+                        <img src="asset/images/fishing5.jpg" class="fade-image">
+                        <div class="overlay2-text">Fishing</div>
+                    </div>
+                    <div class="fade-container" style="width: 406px; height: 250px;">
+                        <img src="asset/images/rafting1.jpg" class="fade-image active">
+                        <img src="asset/images/rafting2.jpg" class="fade-image">
+                        <img src="asset/images/rafting3.jpg" class="fade-image">
+                        <img src="asset/images/rafting4.jpg" class="fade-image">
+                        <img src="asset/images/rafting5.jpg" class="fade-image">
+                        <div class="overlay2-text">Rafting</div>
+                    </div>
+                    <div class="fade-container" style="width: 406px; height: 250px;">
+                        <img src="asset/images/jungle1.jpg" class="fade-image active">
+                        <img src="asset/images/jungle2.jpg" class="fade-image">
+                        <img src="asset/images/jungle3.jpg" class="fade-image">
+                        <img src="asset/images/jungle4.jpg" class="fade-image">
+                        <img src="asset/images/jungle5.jpg" class="fade-image">
+                        <div class="overlay2-text">Jungle Trip</div>
+                    </div>
+                </div>
+
+                <!-- Baris 3 -->
+                <div class="d-flex justify-content-center gap-4 flex-wrap mt-4">
+                    <div class="fade-container" style="width: 406px; height: 250px;">
+                        <img src="asset/images/horse1.jpg" class="fade-image active">
+                        <img src="asset/images/horse2.jpg" class="fade-image">
+                        <img src="asset/images/horse3.jpg" class="fade-image">
+                        <img src="asset/images/horse4.jpg" class="fade-image">
+                        <img src="asset/images/horse5.jpg" class="fade-image">
+                        <div class="overlay2-text">Horse Ride</div>
+                    </div>
+                    <div class="fade-container" style="width: 406px; height: 250px;">
+                        <img src="asset/images/hiking1.jpg" class="fade-image active">
+                        <img src="asset/images/hiking2.jpg" class="fade-image">
+                        <img src="asset/images/hiking3.jpg" class="fade-image">
+                        <img src="asset/images/hiking4.jpg" class="fade-image">
+                        <img src="asset/images/hiking5.webp" class="fade-image">
+                        <div class="overlay2-text">Hiking</div>
+                    </div>
+                    <div class="fade-container" style="width: 406px; height: 250px;">
+                        <img src="asset/images/hunting1.jpg" class="fade-image active">
+                        <img src="asset/images/hunting2.webp" class="fade-image">
+                        <img src="asset/images/hunting3.jpg" class="fade-image">
+                        <img src="asset/images/hunting4.jpg" class="fade-image">
+                        <img src="asset/images/hunting5.jpg" class="fade-image">
+                        <div class="overlay2-text">Hunting</div>
+                    </div>
+                </div>
+        </div>
+     </section>
+
+     <!-- Review Section-->
+      <section class="review2 text-center py-4" id="review">
+        <h2 class="review2-title">Review</h2>
+        <h2 class="review2-divider"></h2>
+        <div class="container mt-4">
+            <div class="row g-4">
+
+                <!-- Review 1 -->
+                 <div class="col-lg-4">
+                    <div class="review2-card">
+                        <div class="review2-header">
+                            <div class="review2-left">
+                                <img src="asset/icon/profile.png" class="rounded-circle me-2" alt="user">
+                                <p>Giles Tay</p>
+                                <small class="text-muted"><span class="badge bg-light text-dark ms-2">Verified</span></small>
+                            </div>
+                            <div class="review2-right">
+                                <div class="text-warning mb-2">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>
+                            We had an Awesome time at Goroadventures. Great food, comfortable stay, friendly and staff, and a great host.
+                            One if my best trip so far. 
+                        </p>
+                    </div>
+                 </div>
+
+                 <!-- Review 2 -->
+                 <div class="col-lg-4">
+                    <div class="review2-card">
+                        <div class="review2-header">
+                            <div class="review2-left">
+                                <img src="asset/icon/profile.png" class="rounded-circle me-2" alt="user">
+                                <p>Birgit Gerlinger</p>
+                                <small class="text-muted"><span class="badge bg-light text-dark ms-2">Verified</span></small>
+                            </div>
+                            <div class="review2-right">
+                                <div class="text-warning mb-2">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>
+                            Wir können das Team von Goroadventures bestens empfehlen. Sie haben sich super um uns gekümmert (Abholung von der Fähre und leckeres Essen).
+                            Schnorcheln und tauchen war sehr schön. Es gab Zwergseepferdchen und Walhaie in einem Tauchgang.
+                            Die neuen Unterkünfte sind sehr schick und hochwertig.
+                        </p>
+                    </div>
+                 </div>
+
+                 <!-- Review 3 -->
+                 <div class="col-lg-4">
+                    <div class="review2-card">
+                        <div class="review2-header">
+                            <div class="review2-left">
+                                <img src="asset/icon/profile.png" class="rounded-circle me-2" alt="user">
+                                <p>Shun Yian</p>
+                                <small class="text-muted"><span class="badge bg-light text-dark ms-2">Verified</span></small>
+                            </div>
+                            <div class="review2-right">
+                                <div class="text-warning mb-2">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>
+                            维护很好的新酒店，有新风扇、新空调和温水洗澡。床垫是欧洲水平，还有很多先进的用电设施。我们每天在这里吃早餐，餐厅的阿姨服务很好，菜也非常好吃。潜水设备非常新，位置距离鳍鲨步行可到。
+                        </p>
+                    </div>
+                 </div>
+            </div>
+      </section>
+
+      <footer class="footer mt-4">
+        <div class="footer-container">
+            <div class="footer-columns">
+            
+            <!-- Kolom Home -->
+            <div class="footer-column">
+                <h5>Home</h5>
+                <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#mission">Mission</a></li>
+                <li><a href="index.html#why">Why Goro Adventure?</a></li>
+                <li><a href="index.html#teams">Teams</a></li>
+                <li><a href="index.html#travelogue">Travelogue</a></li>
+                <li><a href="index.html#resort">Resort</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Favorite Dive -->
+            <div class="footer-column">
+                <h5>Favorite Dive</h5>
+                <ul>
+                <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
+                <li><a href="divesites.html#biluhu">Biluhu</a></li>
+                <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
+                <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
+                <li><a href="divesites.html#houseReef">House Reef</a></li>
+                <li><a href="divesites.html#boselSoputra">Bosel Soputra</a></li>
+                <li><a href="divesites.html#boselPrincess">Bosel Princess Mahena</a></li>
+                <li><a href="divesites.html#tamboMuck">Tambo Muck</a></li>
+                <li><a href="divesites.html#whalesharkPoint">Whaleshark Point</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Deals -->
+            <div class="footer-column">
+                <h5>Deals</h5>
+                <ul>
+                <li><a href="deals.html#deals">Deals</a></li>
+                <li><a href="deals.html#package">Package</a></li>
+                <li><a href="deals.html#resort">Resort</a></li>
+                <li><a href="deals.html#disclaimer">Disclaimer</a></li>
+                <li><a href="deals.html#addons">Add Ons</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Water Course -->
+            <div class="footer-column">
+                <h5>Water Course</h5>
+                <ul>
+                <li><a href="course.html#waterCourse">Water Course</a></li>
+                <li><a href="course.html#partners">Partners</a></li>
+                <li><a href="course.html#course">Course</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Gallery & Review -->
+            <div class="footer-column">
+                <h5>Gallery & Review</h5>
+                <ul>
+                <li><a href="gr.html#gallery">Gallery</a></li>
+                <li><a href="gr.html#review">Review</a></li>
+                </ul>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="footer-divider"></div>
+
+
+            <!-- Contact -->
+            <div class="footer-column contact-detail">
+                <h5>CONTACT</h5>
+                <ul>
+                <li><i class="fa fa-map-marker-alt"></i>Jl. Trans Sulawesi, Botubarani, Kec. Kabila Bone, Kabupaten Bone Bolango, Gorontalo 96117</li>
+                <li><i class="fa fa-phone"></i> +6281242963516 (Mr Yunan)</li>
+                <li><i class="fa fa-phone"></i> +628598366308 (Mr Daniel)</li>
+                <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
+                </ul>
+            </div>
+            
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h5>SOCIAL MEDIA</h5>
+                <div class="social-icons">
+                <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Ig Icon">
+                </a>
+                <a href="#"><img src="asset/icon/fb.png" alt="Ig Icon">
+                </a>
+                <a href="#">
+                    <img src="asset/icon/Tiktok.png" alt="Ig Icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank">
+                    <img src="asset/icon/yt.png" alt="Ig Icon">
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+  document.querySelectorAll('.fade-container').forEach(container => {
+    const images = container.querySelectorAll('.fade-image');
+    let index = 0;
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 1000);
+  });
+</script>
+</body>
+</html>

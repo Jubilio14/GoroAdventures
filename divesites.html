@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dive Sites</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Gabarito";
+            background-color: #27235D;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            height: 90px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1A1A3D !important;
+            margin: 0 10px;
+        }
+
+        .btn-journey {
+            border: 2px solid #1A1A3D;
+            font-weight: bold;
+            font-size: 18px;
+            color: #1A1A3D;
+            border-radius: 10px;
+            padding: 6px 16px;
+            text-decoration: none;
+        }
+
+        .btn-journey:hover {
+            background-color: #1A1A3D;
+            color: white;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            color: #1A1A3D;
+            cursor: pointer;
+        }
+
+        /* Favorite Dive */
+        .fDive {
+            position: relative;
+            background: url('asset/images/fDive.jpg') no-repeat center center/cover;
+            height: 737px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .fDive-overlay {
+            background: rgba(0, 0, 0, 0.400);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .fDive-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .fDive-content h1 {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 100%;
+        }
+
+        .container h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .container h3 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        /* Olele */
+
+        .olele {
+            padding: 32px 0;
+            color: white;
+        }
+
+        .salvador-text {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .salvador-img {
+            height: 231px;
+            width: 216px;
+        }
+
+        .salvador-name {
+            font-size: 24px;
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .coral-text {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .enigma-img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .enigma-name {
+            font-size: 24px;
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .sponge-img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .sponge-name {
+            font-size: 24px;
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .olele1-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .right-img {
+            height: 50%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /* Biluhu */
+
+        .biluhu {
+            padding: 32px 0;
+            color: white;
+        }
+
+        .biluhu-text {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .salvador2-img {
+            height: 629px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .salvador2-name {
+            font-size: 32px;
+            font-weight: 400;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .dottyback-img {
+            height: 629px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .dottyback-name {
+            font-size: 32px;
+            font-weight: 400;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Kaisumaru */
+        .kaisumaru {
+            color: white;
+        }
+
+        .kaisumaru-text {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .gorontalo-title {
+            font-size: 32px;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .myth-text {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .gorontalo-img {
+            width: 100%;
+            height: 401px;
+            object-fit: cover;
+        }
+
+        .myth2-text {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .kaisumaru-closing {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        /* Dutch */
+        .dutch {
+            color: white;
+        }
+
+        .dutch-img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .dutch-text {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        /* House Reef */
+        .hreef{
+            color: white;
+        }
+
+        .hreef-img {
+            width: 100%;
+            height: 588px;
+            object-fit: cover;
+        }
+
+        .hreef-caption {
+            font-size: 32px;
+            font-weight: 400;
+            margin-top: 10px;
+            font-style: italic
+        }
+
+        .coralBride-text {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .coralBride-img {
+            width: 100%;
+            height: 915px;
+            object-fit: cover;
+        }
+
+        .coralBride-caption {
+            font-size: 32px;
+            font-weight: 400;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Bosel Soputa */
+        .boselSoputa {
+            color: white;
+        }
+
+        .boselImg-left {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .boselImg-right {
+            height: 33.33%;
+            width: 100%;
+            object-fit: 100%;
+        }
+
+        .boselMahena {
+            color: white;
+        }
+
+        .mahenaImg-top {
+            width: 100%;
+            height: 796px;
+            object-fit: cover;
+        }
+
+        .mahenaImg-bottom {
+            width: 100%;
+            height: 288px;
+            object-fit: cover;
+        }
+
+        /* Tambo Muck */
+        .tamboMuck {
+            color: white;
+        }
+        
+        .coconut-img {
+            width: 100%;
+            height: 625px;
+            object-fit: cover;
+        }
+
+        .coconut-caption {
+            font-size: 32px;
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .tamboMuck-img {
+            width: 100%;
+            height: 588px;
+            object-fit: cover;
+        }
+
+        .tamboMuck-caption {
+            font-size: 32px;
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Whaleshark Point */
+        .whaleShark {
+            color: white;
+        }
+
+        .whaleShark-info {
+            font-size: 32px;
+            font-weight: 400;
+            text-align: justify ;
+            margin-top: 30px;
+        }
+
+        .whaleShark-img {
+            width: 100%;
+            height: 458px;
+            object-fit: cover;
+        }
+
+        .whaleShark-caption {
+            font-size: 32px;
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .calendar-img {
+            width: 100%;
+            height: 889px;
+            object-fit: cover;
+        }
+
+        .calendar-caption {
+            font-size: 32px;
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .whaleShark-img2 {
+            width: 100%;
+            height: 664px;
+            object-fit: cover;
+        }
+
+        /* footer */
+        .footer {
+            background-color: white;
+            padding: 40px 20px;
+            color: #27235D;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1 1 150px;
+        }
+
+        .footer-column h5 {
+            font-size: 16px;
+            font-style: bold;
+            font-weight: 800;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        
+        .footer-divider {
+            width: 1px;
+            background-color: #27235D;
+            height: 25  0px;
+            margin: 0 30px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #27235D;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            border: 2px solid #27235D;
+            border-radius: 4px;
+            gap: 10px;
+            height: 34px;
+            width: 34px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .social-icons img {
+            height: 15px;
+            width: 15px;
+        }
+
+        /* Whatsapp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            z-index: 999;
+            padding: 10px;
+        }
+
+        .whatsapp-float img {
+            width: 40px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+            <img src="asset/images/Logo.png" alt="Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="divesites.html">Dive Sites</a></li>
+                <li class="nav-item"><a class="nav-link" href="deals.html">Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="course.html">Course</a></li>
+                <li class="nav-item"><a class="nav-link" href="gr.html">Galery & Review</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-search search-icon"></i>
+                <a href="deals.html" class="btn btn-journey">Start Your Journey</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Whatsapp -->
+    <a href="https://wa.me/6281242963516" class="whatsapp-float" target="_blank">
+        <img src="asset/icon/WA.png" alt="WhatsApp">
+    </a>
+
+    <!-- Favorite Dive -->
+     <section class="fDive">
+        <div class="fDive-overlay"></div>
+            <div class="fDive-content">
+                <h1>
+                Favorite Dive
+                </h1>
+            </div>
+        </div>
+     </section>
+
+    <!-- Olele -->
+     <section class="olele" id="olele">
+        <div class="container">
+            <h1>Olele Jin Cave</h1>
+            <h3>Dive Site What to See</h3>
+            <div class="row align-items-start">
+                <div class="col-md-9">
+                    <p class="salvador-text">
+                        Salvador Dali sponges are hard, rock-like sponges. 
+                        The species was first described in 1925 from the Togian Islands, south of Gorontalo,Indonesia. 
+                        The name comes from its resemblance to Dali’s Enigma of Desire painting. The sponge is usually found below 20 meters in deeper water. Only found in Gorontalo, 
+                        The Enigma of My Desire is one of Dalí's earliest contributions to the Surrealist movement, the first work sold during his first solo exhibition at the Goemans Gallery, and the corner stone piece of this exhibition. It depicts a Catalonian landscape with a boy and man embracing in the background.
+                    </p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="asset/images/SalvadorDali.png" alt="Salvador Dali" class="salvador-img">
+                    <p class="salvador-name">Salvador Dali</p>
+                </div>
+            </div>
+            <div class="row align-items-start mt-4">
+                <div class="col-md-6">
+                    <p class="coral-text">
+                        Touching coral can actually harm or even kill it, as it is a fragile living organism. Coral polyps have a protective layer of mucus, and touching it can disrupt or damage this layer, impacting their health. This picture shows the Salvador Dali Sponge degrading due to people touching it The design of gorgonian corals requires a small amount of surface area for attachment, but provides a large surface area for feeding. Gorgonians must avoid being damaged by currents but, at the same time, must remain erect in order to feed effectively. These two requirements have produced a compromise between rigidity and flexibility, with colonies typically having the elasticity of stiff rubber. When currents threaten to damage a colony, they can bend and then spring back into their original position. The giant sea fans reach their maxium size in 10 to 15 years.
+                    </p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="asset/images/enigma.png" alt="Engima" class="enigma-img">
+                    <p class="enigma-name">The Enigma of My Desire</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="asset/images/sponge.png" alt="Sponge" class="sponge-img">
+                    <p class="sponge-name">Salvador Dali Sponge Coral</p>
+                </div>
+            </div>
+            <div class="row g-0 mt-4 ">
+                <div class="col-md-8">
+                    <img src="asset/images/olele1.png" alt="Olele 1" class="olele1-img">
+                </div>
+                <div class="col-md-4 right-col">
+                    <img src="asset/images/olele2.png" alt="Olele 2" class="right-img">
+                    <img src="asset/images/olele3.png" alt="Olele 3" class="right-img"> 
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- Biluhu -->
+     <section class="biluhu" id="biluhu">
+        <div class="container mt-5">
+            <h1>Biluhu</h1>
+            <h3>Dive Site What to See</h3>
+            <h3 style="font-style: italic; margin-top: 30px;">The Petrified Sailor</h3>
+            <p class="biluhu-text">
+                Myth: In coastal Sulawesi, Salvador Dali Sponge is called "Tulang Hantu" (Ghost Bone). Fishermen claim these sponges are the petrified remains of sailors cursed by sea witches for stealing pearls. The sponges "grow" where the drowned men’s bones sank.
+            </p>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="asset/images/salvador2.png" alt="Salvador 2" class="salvador2-img">
+                    <p class="salvador2-name">Salvador Dali Sponge Coral</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="asset/images/dottyback.png" alt="Dottyback" class="dottyback-img">
+                    <p class="dottyback-name">School of Dottyback</p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- Kaisumaru -->
+      <section class="kaisumaru" id="kaisumaru">
+        <div class="container mt-5">
+            <h1>Kaisumaru Shipwreck</h1>
+            <h3>Dive Site What to See</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="kaisumaru-text">
+                        The sunken ship off Leato Beach is a Japanese cargo vessel believed to have sunk during World War II, between 1942 and 1945, when Japan occupied Indonesia. Named Kaisumaru, the ship was reportedly transporting copra, wood, and rattan from Gorontalo, though some locals speculate it carried gold due to nearby mines operated since the colonial era. According to eyewitnesses like Mr. Gani Paja (aged 80), the ship caught fire while attempting to exit Tomini Bay, possibly after being attacked by local resistance forces led by Gorontalo hero Nani Wartabone. The crew of six survived as the vessel drifted ashore and remained stranded for a month before sinking.
+                    </p>
+                    <p class="kaisumaru-text">
+                        Today, the wreck lies upside down on a sloping seabed at depths ranging from 15 to 51 meters. Measuring approximately 50 meters in length, the ship retains about 60% of its structure, with 30% broken or buried in sediment. Notable features include:
+                    </p>
+                    <ul class="kaisumaru-text">
+                        <li>A fully intact propeller at 26 meters.</li>
+                        <li>A large access hole on the portside at 44 meters, likely from bombing or reef impact.</li>
+                        <li>The bow, resting at 47-51 meters, with two visible decks.</li>
+                        <li>A collapsed engine room near the propeller at 43 meters.</li>
+                        <li>Scattered debris, including masts and anchors, at shallower depths.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="gorontalo-title">The Gold-Hoarding Coral (Gorontalo’s WWII Legend)</h3>
+                    <p class="myth-text">
+                        Myth: Locals insist the Leato wreck’s corals hide Japanese gold bars, but anyone who takes one will be dragged underwater by hantu laut
+                    </p>
+                    <h3 class="gorontalo-title">Gorontalo’s Phantom Coral Guardians</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="asset/images/gorontalo1.png" alt="Gorontalo 1" class="gorontalo-img">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="asset/images/gorontalo2.png" alt="Gorontalo 2" class="gorontalo-img">
+                        </div>
+                    </div>
+                    <p class="myth2-text" style="margin-top: 20px;">
+                        Myth: The coral-smothered Japanese shipwreck at Leato Beach is said to be patrolled by Nggoango (shadowy sea spirits). Locals claim the corals grow unnaturally fast where bones are buried.
+                    </p>
+                </div>
+                <p class="kaisumaru-closing">
+                    The wreck is partially covered in coral (30%), with marine life thriving on its steel hull. Local legends speak of a hidden Japanese gold storage facility nearby, discovered by a former romusha (forced laborer), though the site is feared due to disappearances of those who ventured there. While some believe the ship once carried gold, most assume its cargo was salvaged long ago. This shipwreck serves as a historical marker of Gorontalo’s wartime past and remains a subject of intrigue for divers and historians alike.
+                </p>
+            </div>
+        </div>
+      </section>
+
+      <!-- Dutch -->
+       <section class="dutch" id="duchColonial">
+            <div class="container mt-5">
+                <h1>Dutch Colonial Shipwreck</h1>
+                <h3>Dive Site What to See</h3>
+                <div class="row align-items-center mt-4">
+                    <div class="col-md-6">
+                        <img src="asset/images/dutch.png" alt="Dutch" class="dutch-img">
+                    </div>
+                    <div class="col-md-6 dutch-text">
+                        <p>
+                            The Dutch Colonial Shipwreck near Botubarani in Kubu Marine Park is a fragmented relic from Indonesia’s pre-WWII colonial era, likely a merchant or patrol vessel sunk due to storms, conflict, or intentional scuttling. Unlike the well-documented Japanese wreck in Leato, its origins remain unclear, with local lore dubbing it "Kapal Belanda" (Dutch Ship).
+                        </p>
+                        <p>
+                            Located at a recreational diving depth of 10–25 meters, the site features scattered debris, including wooden beams, iron rivets, and a possible cannon, suggesting a defensive or trade role. Coral coverage is extensive (40–50%), with soft corals (gorgonians) and hard corals (Acropora) thriving alongside diverse marine life like batfish, barracuda, and pygmy seahorses
+                        </p>
+                        <p>
+                            Key Highlights:
+                            <ul>
+                                <li>Accessibility: Ideal for beginners due to shallow depths and calm conditions (best April–October).</li>
+                                <li>Mysteries: Rumors of lost spices or Dutch coins persist, though no verified artifacts have been recovered.</li>
+                                <li>Conservation: Protected under Kubu Marine Park, prohibiting artifact removal.</li>
+                            </ul>
+                        </p>
+                        <p>
+                            Comparison with Leato’s Japanese Wreck:
+                            <ul>
+                                <li>Depth: 10–25m (Dutch) vs. 15–51m (Japanese, requiring tech diving).</li>
+                                <li>Condition: Fragmented debris (Dutch) vs. 60% intact hull (Japanese).</li>
+                                <li>History: Colonial trade/defense (Dutch) vs. WWII cargo transport (Japanese).</li>
+                            </ul>
+                        </p>
+                        <p>
+                            While less historically documented, the Botubarani wreck offers a unique glimpse into Gorontalo’s maritime past and a biodiverse dive site. Further archaeological study could unveil more about its role in the Dutch East Indies era.
+                        </p>
+                    </div>
+                </div>
+            </div>
+       </section>
+
+       <!-- House Reef -->
+        <section class="hreef" id="houseReef">
+            <div class="container mt-5">
+                <h1>House Reef</h1>
+                <h3>Dive Site What to See</h3>
+                <div class="row mt-5">
+                    <div class="col-md-6 text-center">
+                        <img src="asset/images/hreef1.png" alt="Spanish Dancer" class="hreef-img">
+                        <p class="hreef-caption">Spanish Dancer</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="asset/images/hreef2.png" alt="Moray Eel" class="hreef-img">
+                        <p class="hreef-caption">Moray Eel</p>
+                    </div>
+                </div>
+                <h3 class="mt-4" style="font-style: italic;">The Coral Bride’s Curse</h3>
+                <p class="coralBride-text">
+                    A legend tells of a woman who drowned herself near Botubarani after her lover betrayed her. Her hair became Sinularia (leather coral), which "strangles" unfaithful men who touch it.
+                </p>
+                <div class="col-md-12 text-center">
+                    <img src="asset/images/Intro.jpg" alt="Coral Bride" class="coralBride-img">
+                    <p class="coralBride-caption">The Coral Bride's Curse</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bosel Soputa -->
+         <section class="boselSoputa" id="boselSoputra">
+            <div class="container mt-5">
+                <h1>Bosel Soputa</h1>
+                <h3>Dive Site What to See</h3>
+                <div class="row g-0 mt-5">
+                    <div class="col-md-9">
+                        <img src="asset/images/bosel1.png" class="boselImg-left">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="asset/images/bosel2.png" class="boselImg-right">
+                        <img src="asset/images/bosel3.png" class="boselImg-right">
+                        <img src="asset/images/bosel4.png" class="boselImg-right">
+                    </div>
+                </div>
+            </div>
+         </section>
+
+         <!-- Bosel Princess Mahena -->
+          <section class="boselMahena" id="boselPrincess">
+            <div class="container mt-5">
+                <h1>Bosel Princess Mahena</h1>
+                <h3>Dive Site What to See</h3>
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <img src="asset/images/mahena1.png" class="mahenaImg-top">
+                    </div>
+                </div>
+                <div class="row g-0 mt-3">
+                    <div class="col-md-4">
+                        <img src="asset/images/mahena2.png" class="mahenaImg-bottom">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="asset/images/mahena3.png" class="mahenaImg-bottom">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="asset/images/mahena4.png" class="mahenaImg-bottom">
+                    </div>
+                </div>
+            </div>
+          </section>
+
+          <!-- Tambo Muck -->
+           <section class="tamboMuck" id="tamboMuck">
+                <div class="container mt-5">
+                    <h1>Tambo Muck</h1>
+                    <h3>Dive Site What to See</h3>
+                    <div class="row g-0 mt-5 text-center">
+                        <div class="col-md-6">
+                            <img src="asset/images/coconut1.png" class="coconut-img">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="asset/images/coconut2.png" class="coconut-img">
+                        </div>
+                        <p class="coconut-caption">Coconut Octopus</p>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-6 text-center">
+                            <img src="asset/images/shawn.png" alt="Shawn the Sheep" class="tamboMuck-img">
+                            <p class="tamboMuck-caption">Shawn the Sheep</p>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="asset/images/teddyBear.png" alt="Teddy Bear Crab" class="tamboMuck-img">
+                            <p class="tamboMuck-caption">Teddy Bear Crab</p>
+                        </div>
+                    </div>
+                </div>
+           </section>
+
+           <!-- Whaleshark Point -->
+            <section class="whaleShark" id="whalesharkPoint">
+                <div class="container mt-5">
+                    <h1>Whaleshark Point</h1>
+                    <h3>Dive Site What to See</h3>
+                    <p class="whaleShark-info">
+                        In 2016 there is a factory that was processing shrimp and they discarded the shrimp head and shells into the sea. After a few weeks later they found that there were 26 whale sharks swimming around the area.
+                    </p>
+                    <div class="row g-0 mt-5 text-center">
+                        <div class="col-md-6">
+                            <img src="asset/images/whaleshark1.png" class="whaleShark-img">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="asset/images/whaleshark2.png" class="whaleShark-img">
+                        </div>
+                        <p class="whaleShark-caption">
+                            Whale Shark
+                        </p>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12 text-center">
+                            <img src="asset/images/calendar.png" alt="Calendar" class="calendar-img">
+                            <p class="calendar-caption">
+                                Calendar Showing the Whaleshark Sightings
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-6 text-center">
+                            <img src="asset/images/pygmy.png" alt="Pygmy Seahorse" class="whaleShark-img2">
+                            <p class="whaleShark-caption">
+                                Pygmy Seahorse
+                            </p>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="asset/images/underwater.png" alt="Underwater Bicycle" class="whaleShark-img2">
+                            <p class="whaleShark-caption">
+                                Underwater Bicycle
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+            
+            <!-- Kolom Home -->
+            <div class="footer-column">
+                <h5>Home</h5>
+                <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#mission">Mission</a></li>
+                <li><a href="index.html#why">Why Goro Adventure?</a></li>
+                <li><a href="index.html#teams">Teams</a></li>
+                <li><a href="index.html#travelogue">Travelogue</a></li>
+                <li><a href="index.html#resort">Resort</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Favorite Dive -->
+            <div class="footer-column">
+                <h5>Favorite Dive</h5>
+                <ul>
+                <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
+                <li><a href="divesites.html#biluhu">Biluhu</a></li>
+                <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
+                <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
+                <li><a href="divesites.html#houseReef">House Reef</a></li>
+                <li><a href="divesites.html#boselSoputra">Bosel Soputra</a></li>
+                <li><a href="divesites.html#boselPrincess">Bosel Princess Mahena</a></li>
+                <li><a href="divesites.html#tamboMuck">Tambo Muck</a></li>
+                <li><a href="divesites.html#whalesharkPoint">Whaleshark Point</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Deals -->
+            <div class="footer-column">
+                <h5>Deals</h5>
+                <ul>
+                <li><a href="deals.html#deals">Deals</a></li>
+                <li><a href="deals.html#package">Package</a></li>
+                <li><a href="deals.html#resort">Resort</a></li>
+                <li><a href="deals.html#disclaimer">Disclaimer</a></li>
+                <li><a href="deals.html#addons">Add Ons</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Water Course -->
+            <div class="footer-column">
+                <h5>Water Course</h5>
+                <ul>
+                <li><a href="course.html#waterCourse">Water Course</a></li>
+                <li><a href="course.html#partners">Partners</a></li>
+                <li><a href="course.html#course">Course</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Gallery & Review -->
+            <div class="footer-column">
+                <h5>Gallery & Review</h5>
+                <ul>
+                <li><a href="gr.html#gallery">Gallery</a></li>
+                <li><a href="gr.html#review">Review</a></li>
+                </ul>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="footer-divider"></div>
+
+
+            <!-- Contact -->
+            <div class="footer-column contact-detail">
+                <h5>CONTACT</h5>
+                <ul>
+                <li><i class="fa fa-map-marker-alt"></i>Jl. Trans Sulawesi, Botubarani, Kec. Kabila Bone, Kabupaten Bone Bolango, Gorontalo 96117</li>
+                <li><i class="fa fa-phone"></i> +6281242963516 (Mr Yunan)</li>
+                <li><i class="fa fa-phone"></i> +628598366308 (Mr Daniel)</li>
+                <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
+                </ul>
+            </div>
+            
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h5>SOCIAL MEDIA</h5>
+                <div class="social-icons">
+                <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Ig Icon">
+                </a>
+                <a href="#"><img src="asset/icon/fb.png" alt="Ig Icon">
+                </a>
+                <a href="#">
+                    <img src="asset/icon/Tiktok.png" alt="Ig Icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank">
+                    <img src="asset/icon/yt.png" alt="Ig Icon">
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

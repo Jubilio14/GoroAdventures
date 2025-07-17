@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GoroAdventure</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: gabarito;
+      background-color: #27235D;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: white;
+      height: 90px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .navbar-brand img {
+      height: 60px;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1A1A3D !important;
+      margin: 0 10px;
+    }
+
+    .btn-journey {
+      border: 2px solid #1A1A3D;
+      font-weight: bold;
+      font-size: 18px;
+      color: #1A1A3D;
+      border-radius: 10px;
+      padding: 6px 16px;
+      text-decoration: none;
+    }
+
+    .btn-journey:hover {
+      background-color: #1A1A3D;
+      color: white;
+    }
+
+    .search-icon {
+      font-size: 20px;
+      color: #1A1A3D;
+      cursor: pointer;
+    }
+
+    /* Intro */
+    .intro {
+      position: relative;
+      background: url('asset/images/Intro.jpg') no-repeat center center/cover;
+      height: 737px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .intro-overlay {
+      background: rgba(0, 0, 0, 0.400);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+
+    .intro-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-content h1 {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 150%;
+    }
+
+    .intro-content .stars {
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    /* Sulawesi */
+    .sulawesi {
+      color: white;
+    }
+
+    .sulawesi-title {
+      font-size: 48px;
+      font-weight: 500;
+    }
+
+    .sulawesi-divide {
+      width: 80%;
+      height: 4px;
+      background-color: white;
+      border-top: 5px solid;
+      margin: 10px auto 30px;
+    }
+
+    .sulawesi-content p {
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .sulawesi-content .italic-text {
+      color: #b4b4b4;
+      font-family: arial;
+      font-style: italic;
+      font-size: 32px;
+      line-height: auto;
+      vertical-align: middle;
+    }
+
+    /* Mission */
+    .mission-section {
+      background-color: #f9f9ff; 
+      color: #27235D;
+    }
+
+    .mission-title {
+      font-size: 48px;
+      font-weight: 500;
+    }
+
+    .mission-divider {
+      width: 80%;
+      height: 4px;
+      background-color: #27235D;
+      border-top: 5px solid;
+      margin: 10px auto 30px;
+    }
+
+    .mission-icon {
+      width: 168px;
+      height: 140px;
+    }
+
+    .mission-text {
+      font-size: 32px;
+      font-weight: 400;
+      line-height: auto;
+    }
+
+    /* Why */
+    .why-section {
+      color: white;
+    }
+
+    .why-title {
+      font-size: 48px;
+      font-weight: 500;
+    }
+
+    .why-divider {
+      width: 80%;
+      height: 4px;
+      background-color: white;
+      border-top: 5px solid;
+      margin: 10px auto 30px;
+    }
+
+    .testimoni-card {
+      background-size: cover;
+      background-position: center;
+      height: 413px;
+      width: 289px;
+      border-radius: 6px;
+      position: relative;
+      display: flex;
+      align-items: end;
+      padding: 10px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .testimoni-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+      border-radius: 10px;
+    }
+
+    .testimoni-text {
+      position: relative;
+      z-index: 1;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    /* Resort */
+    .resort-section {
+      color: white;
+    }
+
+    .resort-title {
+      font-size: 48px;
+    }
+
+    .resort-divider {
+      width: 80%;
+      height: 4px;
+      background-color: white;
+      border-top: 5px solid;
+      margin: 10px auto 30px;
+    }
+
+    .resort-card {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 6px;
+      height: 335px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .resort-overlay {
+      position: absolute;
+      bottom: 0;
+      padding: 20px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .resort-overlay p {
+      font-size: 24px;
+      line-height: 100%;
+      margin: 5px 0;
+    }
+
+    .price {
+      color: #ff4b4b;
+      font-weight: bold;
+    }
+
+    .resort-overlay .star-text {
+      font-size: 18px;
+    }
+
+    .stars {
+      color: gold;
+    }
+
+    .resort-button {
+      background: white;
+      color: #27235D;
+      padding: 6px 14px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .resort-button:hover {
+      background: #ddd;
+    }       
+
+    /* Team */
+    .team-section {
+      color: white;
+    }
+
+    .team-title {
+      font-size: 48px;
+    }
+
+    .team-divider {
+      width: 80%;
+      height: 4px;
+      background-color: white;
+      border-top: 5px solid;
+      margin: 10px auto 30px;
+    }
+
+    .team-card {
+      position: relative;
+      overflow: hidden;
+      border-radius:6px;
+    }
+
+    .team-card::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80%; /* Atur tinggi gradasi sesuai kebutuhan */
+      background: linear-gradient(to top, #27235D, transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .overlay h2 {
+      font-size: 34px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .overlay p {
+      font-size: 18px;
+      text-align: justify;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .team-card:hover .overlay {
+      opacity: 1;
+    } 
+
+    .team-card img {
+      height: 572px;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .member-name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: #fff;
+      padding: 10px;
+      font-weight: bold;
+      text-align: Left;
+      font-size: 32px;
+      z-index: 2;
+    }
+    
+    .team-card:hover .member-name {
+      opacity: 0;
+    }
+
+    /* photo section */
+    .photo-section {
+      color: white;
+      background-image:
+        linear-gradient(#27235D 35%, white 0%);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .photo-title {
+      font-size: 48px;
+    }
+
+    .photo-divider {
+      width: 80%;
+      height: 4px;
+      background-color: white;
+      border-top: 5px solid;
+      margin: 10px auto 30px;
+    }
+
+    .travelogue12 {
+        width: 100%;
+        height: 390px;
+        object-fit: cover;
+    }
+
+    .travelogue3 {
+        width: 100%;
+        height: 114px;
+        object-fit: cover;
+    }
+
+    .travelogue4 {
+        width: 100%;
+        height: 183px;
+        object-fit: cover;
+    }
+
+    .travelogue5 {
+        width: 100%;
+        height: 165px;
+        object-fit: cover;
+    }
+
+    .travelogue6 {
+        width: 47.7%;
+        height: 93.5px;
+        object-fit: cover;
+    }
+
+    .travelogue7 {
+        width: 100%;
+        height: 471px;
+        object-fit: cover;
+    }
+
+    .travelogue8 {
+        width: 100%;
+        height: 141px;
+        object-fit: cover;
+    }
+
+    .cardTitle {
+        font-size: 32px;
+        font-weight: 400;
+        color: #27235D;
+    }
+
+    .card-divider{
+        width: 40%;
+        height: 4px;
+        background-color: white;
+        border-top: 2px solid;
+        color: #27235D;
+        margin-bottom: 5px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .card-divider2{
+        width: 40%;
+        height: 4px;
+        background-color: white;
+        border-top: 2px solid;
+        color: #27235D;
+        margin-bottom: 5px;
+    }
+
+    .cardInfo {
+        font-size: 14px;
+        font-weight: 400;
+        color: #27235D;
+    }
+
+    .card-btn {
+        color: #27235D;
+            background-color: white;
+            text-align: center;
+            font-size: 10px;
+            font-weight: 400;
+            text-decoration: none;
+            border: 1px solid;
+            padding: 5px 10px;
+            height: 25px;
+            border-radius: 6px;
+            width: 62px;
+    }
+
+    .card-btn:hover {
+      background: #27235D;
+      color: white;
+    }
+
+    .cardImg {
+        width: 100%;
+        height: 537px;
+        object-fit: cover;
+    }
+
+
+    /* video */
+    .video{
+      position: relative;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .video-section {
+      position: relative;
+      width: 100%;
+      height: 737px; /* tinggi dibatasi di sini */
+      overflow: hidden;
+      display: block;
+    }
+
+    .video-section video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      display: block; /* penting */
+    }
+
+    .video-txt{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+
+    .video-txt h2{
+      font-size: 48px;
+    }
+
+    .video-txt h1{
+      font-size: 72px;
+    }
+
+    .video-btn {
+      
+            text-decoration: none;
+            background-color: white;
+            color: #27235D;
+            border: none;
+            padding: 11px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 16px;
+            height: 41px;
+            width: 100px;
+    }
+
+    .video-btn:hover {
+      background: #ddd;
+    }
+
+    /* footer */
+    .footer {
+      background-color: white;
+      padding: 40px 20px;
+      color: #27235D;
+    }
+
+    .footer-container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1 1 150px;
+    }
+
+    .footer-column h5 {
+      font-size: 16px;
+      font-style: bold;
+      font-weight: 800;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    
+    .footer-divider {
+      width: 1px;
+      background-color: #27235D;
+      height: 25  0px;
+      margin: 0 30px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #27235D;
+    }
+
+    .footer-column ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      text-decoration: none;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      border: 2px solid #27235D;
+      border-radius: 4px;
+      gap: 10px;
+      height: 34px;
+      width: 34px;
+      text-align: center;
+      align-items: center;
+    }
+
+    .social-icons img {
+      height: 15px;
+      width: 15px;
+    }
+
+    /* Whatsapp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            z-index: 999;
+            padding: 10px;
+        }
+
+        .whatsapp-float img {
+            width: 40px;
+            height: 40px;
+        }
+
+
+    @media (max-width: 768px) {
+      .intro-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .navbar-nav {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="asset/images/Logo.png" alt="Logo">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="divesites.html">Dive Sites</a></li>
+        <li class="nav-item"><a class="nav-link" href="deals.html">Deals</a></li>
+        <li class="nav-item"><a class="nav-link" href="course.html">Course</a></li>
+        <li class="nav-item"><a class="nav-link" href="gr.html">Galery & Review</a></li>
+        </ul>
+      </ul>
+
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-search search-icon"></i>
+        <a href="deals.html" class="btn btn-journey">Start Your Journey</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Whatsapp -->
+  <a href="https://wa.me/6281242963516" class="whatsapp-float" target="_blank">
+    <img src="asset/icon/WA.png" alt="WhatsApp">
+  </a>
+
+<!-- Intro Section -->
+<section class="intro">
+  <div class="intro-overlay"></div>
+  <div class="intro-content">
+    <h1>
+      ANYWHERE, WITH ANYONE<br>
+      WE'RE READY TO MAKE YOUR HOLIDAY<br>
+      UNFORGETTABLE
+    </h1>
+    <div class="stars text-white">
+      ★ ★ ★ ★ ★ &nbsp; 1000+ Reviews on Website
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Sulawesi Section-->
+<section class="sulawesi text-center py-4" id="about">
+    <h2 class="sulawesi-title">Discover Sulawesi</h2>
+    <div class="sulawesi-divide"></div>
+    <div class="container sulawesi-content">
+      <p>
+        This is story of two lands, told trough nature and culture. Of Manado, with its endless blu seas, majestic volcanoes, and a vibrant 
+        spirit shining through every smile. And of Gorontalo, with its serene lakes reflecting the sky, traditions preserved across generations, 
+        and a warmth deeply rooted in its people. 
+      </p>
+      <p>
+        Two regions, two souls, one meaningful journey. This is a story of flavors, colors, and sounds a story that has pulsed through centuries
+        and is now ready to open its most breathtaking chapter.
+      </p>
+      <p>
+        We are the travel company that breaks through the surface of typical tourism to take you deep into the real stories of Manado and Gorontalo.
+        Wander through lively markets, visit heritage-rich villages, dive into mesmerizing coral reefs, and watch sunsets that blanket both lakes and oceans.
+        Above all, meet the extraordinary people who will make this journey a part of your own story.
+      </p>
+      <br>
+      <br>
+      <p class="italic-text">
+        Join us and enjoy exclusive, authentic travel experiences that bring you closer to the heart of Sulawesi
+      </p>
+    </div>
+</section>
+
+ <!-- Mission Section-->
+ <section class="mission-section text-center py-4" id="mission">
+  <h2 class="mission-title">GoroAdventure Mission</h2>
+  <div class="mission-divider"></div>
+
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-md-4 col-sm-6 mb-4">
+        <img src="asset/images/Diving.png" alt="Diver Icon" class="mission-icon mb-3">
+        <p class="mission-text">For the love of<br>freedom underwater</p>
+      </div>
+      <div class="col-md-4 col-sm-6 mb-4">
+        <img src="asset/images/Koper.png" alt="Sustainable Icon" class="mission-icon mb-3">
+        <p class="mission-text">For the Love of empowering<br>sustainable living.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Section-->
+ <section class="why-section text-center py-4" id="why">
+  <h2 class="why-title">Why Goro Adventure</h2>
+  <div class="why-divider"></div>
+
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="testimoni-card" style="background-image: url('asset/images/yuexin.png');">
+          <p class="testimoni-text">❝ The beauty of traveling with people at the same stage of life is that we just get each other. <br><strong>Yuexin Li <span class="fi fi-cn"></strong></p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="testimoni-card" style="background-image: url('asset/images/bambang.png');">
+          <p class="testimoni-text">❝ The beauty of traveling with people at the same stage of life is that we just get each other. <br><strong>Bambang Mulyadi <span class="fi fi-id"></strong></p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="testimoni-card" style="background-image: url('asset/images/chris.png');">
+          <p class="testimoni-text">❝ The beauty of traveling with people at the same stage of life is that we just get each other. <br><strong>Chris Palmer <span class="fi fi-de"></span></strong></p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="testimoni-card" style="background-image: url('asset/images/karyn.png');">
+          <p class="testimoni-text">❝ The beauty of traveling with people at the same stage of life is that we just get each other. <br><strong>Karyn Wong <span class="fi fi-sg"></strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ </section>
+
+<!-- Resort Section -->
+<section class="resort-section text-center py-5" id="resort">
+  <h2 class="resort-title">Resort</h2>
+  <div class="resort-divider"></div>
+
+  <div class="container mt-4">
+    <div class="row g-4">
+      <!-- Kamar 1 -->
+      <div class="col-lg-6">
+        <div class="resort-card" style="background-image: url('asset/images/super.jpg');">
+          <div class="resort-overlay text-start">
+            <p>Gorontalo</p>
+            <p>Super King Bed Room</p>
+            <p>From <span class="price">IDR 2.000.000</span></p>
+            <p class="star-text"><span class="stars">★ ★ ★ ★ ★</span> 200 Reviews</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kamar 2 -->
+      <div class="col-lg-6">
+        <div class="resort-card" style="background-image: url('asset/images/twin.jpg');">
+          <div class="resort-overlay text-start">
+            <p>Gorontalo</p>
+            <p>Twin Bed Room</p>
+            <p>From <span class="price">IDR 2.000.000</span></p>
+            <p class="star-text"><span class="stars">★ ★ ★ ★ ★</span> 200 Reviews</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+ <section class="team-section text-center py-5" id="teams">
+  <h2 class="team-title">Our Teams</h2>
+  <div class="resort-divider"></div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+        <img src="asset/images/Daniel.png" alt="Mr Daniel">
+          <div class="overlay">
+            <h2>Mr Daniel</h2>
+            <p>Daniel is the Founder and Business Development Manager of GoroAdventure, in his pursuit for all things outdoors and to take life 
+            by the horns (Carpe Diem!), he has set up this diving base in Gorontalo as both the place and Marine life is relatively untouched, giving
+            depth to the meaning of tranquil days, siesta afternoons as you awaken your senses to newfound freedom underwater. Come join Dan and his bros
+            to scale your next mountain and conquer your Blue Ocean!
+            </p>
+          </div>
+          <div class="member-name">Mr Daniel</div>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+        <img src="asset/images/Noldi.png" alt="Mr Noldi">
+          <div class="overlay">
+            <h2>Mr Noldi</h2>
+            <p>Noldi is a Master Dive with more than 25 years of diving experience under his belt, he has made diving both fun and safe for many people, who have been under his charge. Friendly, experienced and helpful are common words used to describe him.
+            Come explore the Underwater World in Gorontalo with him. He is also a very accomplished Chef! Make sure to greet him and be in his good books, who knows... He might just treat you to an array of seafood, fresh from the sea!
+            </p>
+          </div>
+          <div class="member-name">Mr Noldi</div>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+        <img src="asset/images/yunan.png" alt="Mr Yunan">
+          <div class="overlay">
+            <h2>Mr Yunan</h2>
+            <p>With more than 15 years of all-rounded experience, Unan is known amongst his peers and guests alike to be zealous, knowledgeable and passionate towards Adventures spanning from Gorontalo and beyond. He has a wide network of friends and is a strong and agile Operations planner. You are in good hands under his care. Look for him if you wish to experience local culture, food, snacks, drinks and more!
+            </p>
+          </div>
+          <div class="member-name">Mr Yunan</div>
+          </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+  <!-- Photo Section -->
+  <section class="photo-section text-center py-5" id="travelogue">
+      <h2 class="photo-title">GoroAdventure Activities</h2>
+      <div class="photo-divider"></div>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-3 gap-4">
+                <img src="asset/images/travelogue1.jpeg" alt="Travelogue 1" class="travelogue12 rounded">
+            </div>
+            <div class="col-md-3">
+                <img src="asset/images/travelogue2.jpg" alt="Travelogue 2" class="travelogue12 rounded">
+            </div>
+            <div class="col-md-2 d-flex flex-column gap-4">
+                <img src="asset/images/instructor.jpg" alt="Travelogue 3" class="travelogue3 rounded">
+                <img src="asset/images/big4.webp" alt="Travelogue 4" class="travelogue3 rounded">
+                <img src="asset/images/travelogue 5.jpg" alt="Travelogue 5" class="travelogue3 rounded">
+            </div>
+            <div class="col-md-4 d-flex flex-column gap-4">
+                <img src="asset/images/travelogue6.jpg" alt="travelogue 6" class="travelogue4 rounded">
+                <img src="asset/images/travelogue7.webp" alt="travelogue 7" class="travelogue4 rounded">
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-3 d-flex flex-column gap-4">
+                <img src="asset/images/travelogue8.webp" alt="travelogue 8" class="travelogue5 rounded">
+                <div class="d-flex gap-4">
+                        <img src="asset/images/travelogue9.jpg" alt="travelogue 9" class="travelogue6 rounded">
+                        <img src="asset/images/fishing2.webp" alt="travelogue 10" class="travelogue6 rounded">
+                    
+                </div>
+                <img src="asset/images/travelogue11.jpg" alt="travelogue 11" class="travelogue5 rounded">
+            </div>
+            <div class="col-md-6">
+                <img src="asset/images/travelogue12.jpg" alt="travelogue 12" class="travelogue7 rounded">
+            </div>
+            <div class="col-md-3 d-flex flex-column gap-4">
+                <img src="asset/images/instructor.jpg" alt="travelogue 13" class="travelogue8 rounded">
+                <img src="asset/images/travelogue14.jpeg" alt="travelogue 14" class="travelogue8 rounded">
+                <img src="asset/images/travelogue15.jpeg" alt="travelogue 15" class="travelogue8 rounded">
+            </div>
+        </div>
+        <div class="row align-items-center text-end mt-4">
+            <div class="col-md-6">
+                <h3 class="cardTitle">GoRo Adventure Water Course</h3>
+                <div class="card-divider"></div>
+                <p class="cardInfo">GoRoAdventure Water Course offers an exciting, refreshing adventure perfect for thrill seekers and nature lovers a like!</p>
+                <a href="course.html" class="card-btn">View Trip</a>
+            </div>
+            <div class="col-md-6">
+                <img src="asset/images/cardImg.jpg" alt="card1" class="cardImg rounded">
+            </div>
+        </div>
+        <div class="row align-items-center text-start mt-4">
+            <div class="col-md-6">
+                <img src="asset/images/cardImg2.jpg" alt="card1" class="cardImg rounded">
+            </div>
+            <div class="col-md-6">
+                <h3 class="cardTitle">GoRo Adventure Luxury Tours</h3>
+                <div class="card-divider2"></div>
+                <p class="cardInfo">GoRoAdventure Luxury Tours offers premium, tailor made journeys that blend adventure with first class comfort and unforgettable experiences.</p>
+                <a href="deals.html" class="card-btn">View Trip</a>
+            </div>
+        </div>
+        <div class="row align-items-center text-end mt-4">
+            <div class="col-md-6">
+                <h3 class="cardTitle">GoRo Adventure Couple Tours</h3>
+                <div class="card-divider"></div>
+                <p class="cardInfo">GoRoAdventure Couple Tours creates unforgettable romantic adventures, perfectly designed for two.</p>
+                <a href="deals.html" class="card-btn">View Trip</a>
+            </div>
+            <div class="col-md-6">
+                <img src="asset/images/jungle1.jpg" alt="card1" class="cardImg rounded">
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video">
+      <div class="video-section">
+        <video autoplay muted loop playsinline>
+          <source src="video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-txt">
+        <h2>READY TO START</h2>
+        <h1>YOUR ADVENTURE?</h1>
+        <a href="deals.html" class="video-btn">Find Your Trip</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+            
+            <!-- Kolom Home -->
+            <div class="footer-column">
+                <h5>Home</h5>
+                <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#mission">Mission</a></li>
+                <li><a href="index.html#why">Why Goro Adventure?</a></li>
+                <li><a href="index.html#teams">Teams</a></li>
+                <li><a href="index.html#travelogue">Travelogue</a></li>
+                <li><a href="index.html#resort">Resort</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Favorite Dive -->
+            <div class="footer-column">
+                <h5>Favorite Dive</h5>
+                <ul>
+                <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
+                <li><a href="divesites.html#biluhu">Biluhu</a></li>
+                <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
+                <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
+                <li><a href="divesites.html#houseReef">House Reef</a></li>
+                <li><a href="divesites.html#boselSoputra">Bosel Soputra</a></li>
+                <li><a href="divesites.html#boselPrincess">Bosel Princess Mahena</a></li>
+                <li><a href="divesites.html#tamboMuck">Tambo Muck</a></li>
+                <li><a href="divesites.html#whalesharkPoint">Whaleshark Point</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Deals -->
+            <div class="footer-column">
+                <h5>Deals</h5>
+                <ul>
+                <li><a href="deals.html#deals">Deals</a></li>
+                <li><a href="deals.html#package">Package</a></li>
+                <li><a href="deals.html#resort">Resort</a></li>
+                <li><a href="deals.html#disclaimer">Disclaimer</a></li>
+                <li><a href="deals.html#addons">Add Ons</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Water Course -->
+            <div class="footer-column">
+                <h5>Water Course</h5>
+                <ul>
+                <li><a href="course.html#waterCourse">Water Course</a></li>
+                <li><a href="course.html#partners">Partners</a></li>
+                <li><a href="course.html#course">Course</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Gallery & Review -->
+            <div class="footer-column">
+                <h5>Gallery & Review</h5>
+                <ul>
+                <li><a href="gr.html#gallery">Gallery</a></li>
+                <li><a href="gr.html#review">Review</a></li>
+                </ul>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="footer-divider"></div>
+
+
+            <!-- Contact -->
+            <div class="footer-column contact-detail">
+                <h5>CONTACT</h5>
+                <ul>
+                <li><i class="fa fa-map-marker-alt"></i>Jl. Trans Sulawesi, Botubarani, Kec. Kabila Bone, Kabupaten Bone Bolango, Gorontalo 96117</li>
+                <li><i class="fa fa-phone"></i> +6281242963516 (Mr Yunan)</li>
+                <li><i class="fa fa-phone"></i> +628598366308 (Mr Daniel)</li>
+                <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
+                </ul>
+            </div>
+            
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h5>SOCIAL MEDIA</h5>
+                <div class="social-icons">
+                <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Ig Icon">
+                </a>
+                <a href="#"><img src="asset/icon/fb.png" alt="Ig Icon">
+                </a>
+                <a href="#">
+                    <img src="asset/icon/Tiktok.png" alt="Ig Icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank">
+                    <img src="asset/icon/yt.png" alt="Ig Icon">
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

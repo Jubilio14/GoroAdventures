@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea View</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Gabarito";
+            background-color: #27235D;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            height: 90px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1A1A3D !important;
+            margin: 0 10px;
+        }
+
+        .btn-journey {
+            border: 2px solid #1A1A3D;
+            font-weight: bold;
+            font-size: 18px;
+            color: #1A1A3D;
+            border-radius: 10px;
+            padding: 6px 16px;
+            text-decoration: none;
+        }
+
+        .btn-journey:hover {
+            background-color: #1A1A3D;
+            color: white;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            color: #1A1A3D;
+            cursor: pointer;
+        }
+
+        .breadcrumb {
+            color: white;
+            margin-top: 120px;
+            gap: 10px;
+        }
+
+        .breadcrumb-link {
+            text-decoration: none;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .breadcrumb-divider {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 10px;
+        }
+
+        .breadcrumb-active {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        /* Sea View Intro Image */
+        .seaView-left {
+            width: 100%;
+            height: 582px;
+            object-fit: cover;
+            
+        }
+
+        .seaView-right {
+            width: 100%;
+            height: 291px;
+            object-fit: cover;
+        }
+
+        .seaView-bottom {
+            width: 47.7%;
+            height: 267px;
+            object-fit: cover;
+        }
+
+        /* Sea View Detail */
+        .sView {
+            color: white;
+        }
+
+        .sView-header {
+            display: flex;
+            gap: 23px;
+            padding-bottom: 24px;
+            align-items: center;
+        }
+
+        .sView-header p {
+            font-size: 24px;
+            font-weight: 500;
+            border-color: white;
+            border: 3px solid;
+            border-radius: 10px;
+            padding: 12px;
+            gap: 10px;
+        }
+
+        .sView-header img {
+            height: 24px;
+            width: 24px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .sView-title {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sView-title h2 {
+            font-size: 62px;
+            font-weight: 900;
+        }
+
+        .sView-title p {
+            color: red;
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        .sView-review {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sView-review h5 {
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .sView-review .divider{
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .sView-review .sView-small{
+            font-size: 24px;
+            font-weight: 400;
+            color: #3A3939;
+        }
+
+        .sView-review p {
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .sView-review img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .sView-admin {
+            gap: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: end;
+        }
+        .sView-btn {
+            color: #27235D;
+            background-color: white;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 400;
+            text-decoration: none;
+            padding: 10px;
+            gap: 10px;
+            border-radius: 10px;
+            width: 211px;
+        }
+
+        .sView-btn:hover {
+          background: rgb(25, 182, 25);
+          color: white;
+        }
+
+        .sView-review2 {
+            color: white;
+        }
+        
+        .sView-review2 h3 {
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        .sView-rating {
+            gap: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sView-rating h5 {
+            font-size: 62px;
+            font-weight: 800;
+        }
+
+        .sView-rating .divider {
+            font-size: 48px;
+            font-weight: 400;
+        }
+
+        .sView-rating .sView-small2 {
+            font-size: 48px;
+            font-weight: 400;
+            color:#3A3939;
+        }
+
+        .sView-rating .rating-detail h5 {
+            font-size: 24px;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .sView-rating .rating-detail p {
+            font-size: 12px;
+            font-weight: 400;
+            margin: 0 0 5px 0;
+        }
+
+        .review2-card {
+            background-color:white;
+            color:black;
+            height: 227px;
+            width: 414px;
+            display: flex;
+            border-radius: 12px;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .review2-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-size: 14px;
+            font-family: Heebo;
+        }
+
+        .review2-left {
+            display: flex;
+            gap: 10px;
+        }
+
+        .review2-right {
+            font-size: 30px;
+        }
+
+        .review2-header .review2-left img {
+            height: 32px;
+            width: 32px;
+        }
+
+        .review2-header .review2-left small {
+            margin-top: 5px;
+            padding: 2px 8px 2px 8px;
+            width: 64px;
+            height: 25px;
+        }
+
+        .review2 p {
+            display: flex;
+            align-items: start;
+            text-align: justify;
+            font-family: Heebo;
+            font-size: 14px;
+            line-height: 150%;
+            margin: 8px 10px;
+        }
+
+        /* Sea View Included */
+        .sView-included {
+            color: white;
+        }
+
+        .sView-included h3{
+            font-size: 48px;
+            font-weight: 800;
+        }
+        
+        .include-detail {
+            display: flex;
+            gap: 32px;
+        }
+
+        .include-detail img {
+            height: 32px;
+            width: 32px;
+        }
+
+        .include-detail p {
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        /* location */
+        .location {
+            color: white;
+        }
+
+        .location-title {
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        .location-detail img {
+            width: 100%;
+            height: 583px;
+            object-fit: cover;
+        }
+
+        .location-info {
+            display: flex;
+            gap: 9px;
+            margin-top: 2px;
+        }
+
+        .location-info img {
+            width: 32px;
+            height: 32px;
+            object-fit: cover;
+            margin-top: 7px;
+        }
+
+        .location-info p {
+            font-size: 32px;
+            font-weight: 400;
+        }
+
+        /* Accomodation Policy */
+        .accomodation {
+            color: white;
+        }
+
+        .accomodation-title {
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        .accomodation-policy {
+            display: flex;
+            gap: 32px;
+        }
+
+        .accomodation-policy img {
+            height: 32px;
+            width: 32px;
+        }
+
+        .accomodation-policy p {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .check-policy {
+            display: flex;
+            gap: 70px;
+        }
+        
+
+        .checkIn p{
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .checkOut p{
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .other-policy{
+            gap: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .other-detail {
+            gap: 15px;
+        }
+
+        .other-detail h5 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 0;
+        }
+
+        .other-detail p {
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 0;
+        }
+
+        /* Room Type */
+
+        .sView-type{
+            color: white;
+        }
+
+        .roomType-title {
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        .type-card {
+            background-color: white;
+            border-radius: 24px;
+            padding: 24px;
+        }
+
+        .roomCard {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .roomCard img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .roomCaption {
+            position: absolute;
+            bottom: 10px;
+            left: 16px;
+            gap: 4px;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        /* footer */
+        .footer {
+            background-color: white;
+            padding: 20px;
+            color: #27235D;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        /* footer */
+        .footer-column {
+            flex: 1 1 150px;
+        }
+
+        .footer-column h5 {
+            font-size: 16px;
+            font-style: bold;
+            font-weight: 800;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        
+        .footer-divider {
+            width: 1px;
+            background-color: #27235D;
+            height: 25  0px;
+            margin: 0 30px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #27235D;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            border: 2px solid #27235D;
+            border-radius: 4px;
+            gap: 10px;
+            height: 34px;
+            width: 34px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .social-icons img {
+            height: 15px;
+            width: 15px;
+        }
+
+        /* Whatsapp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            z-index: 999;
+            padding: 10px;
+        }
+
+        .whatsapp-float img {
+            width: 40px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+            <img src="asset/images/Logo.png" alt="Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="divesites.html">Dive Sites</a></li>
+                <li class="nav-item"><a class="nav-link" href="deals.html">Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="course.html">Course</a></li>
+                <li class="nav-item"><a class="nav-link" href="gr.html">Galery & Review</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-search search-icon"></i>
+                <a href="deals.html" class="btn btn-journey">Start Your Journey</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+     <section class="breadcrumb">
+        <div class="container">
+            <a href="deals.html" class="breadcrumb-link">Deals</a>
+            <span class="breadcrumb-divider">></span>
+            <span class="breadcrumb-active">Sea View</span>
+        </div>
+     </section>
+
+     <!-- Whatsapp -->
+    <a href="https://wa.me/6281242963516" class="whatsapp-float" target="_blank">
+        <img src="asset/icon/WA.png" alt="WhatsApp">
+    </a>
+
+    <!-- Sea View Intro Image -->
+     <section>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-7">
+                    <img src="asset/images/house.png" class="seaView-left rounded">
+                </div>
+                <div class="col-md-5 d-flex flex-column gap-4">
+                    <img src="asset/images/sea view.png" class="seaView-right rounded">
+                    <div class="d-flex gap-4">
+                        <img src="asset/images/interior.png" class="seaView-bottom rounded">
+                        <img src="asset/images/interior2.png" class="seaView-bottom rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <!-- sView -->
+     <section class="sView">
+        <div class="container mt-5">
+            <div class="sView-header align-items-center">
+                <p>Resort</p>
+                <div class="star-img">
+                    <img src="asset/icon/Star.png" alt="header icon" class="sView-icon">
+                    <img src="asset/icon/Star.png" alt="header icon" class="sView-icon">
+                    <img src="asset/icon/Star.png" alt="header icon" class="sView-icon">
+                    <img src="asset/icon/Star.png" alt="header icon" class="sView-icon">
+                    <img src="asset/icon/Star.png" alt="header icon" class="sView-icon">
+                </div>
+            </div>
+            <div class="sView-title align-items-center">
+                <h2>Sea View</h2>
+                <p>IDR 2.200.000/Night</p>
+            </div>
+            <div class="sView-review">
+                <h5>5<span class="divider">/</span><span class="sView-small">5</span></h5>
+                <p>(1000) Review</p>
+                <img src="asset/icon/dot.png" alt="review-icon">
+                <p>Gorontalo, Sulawesi</p>
+            </div>
+            <div class="sView-admin">
+                <a href="https://wa.me/6281242963516" target="_blank" class="sView-btn">Ask Admin</a>
+                <a href="https://booking.ultronpms.com/booking/goroadventures&diveresort/18837022-45a8-ad92-688b-2768315b82b5" target="_blank" class="sView-btn">Book Now</a>
+            </div>
+        </div>
+     </section>
+
+    <!-- Review -->
+      <section class="sView-review2">
+        <div class="container mt-5">
+            <h3>Review</h3>
+            <div class="sView-rating">
+                <h5>5<span class="divider">/</span><span class="sView-small2">5</span></h5>
+                <div class="rating-detail">
+                    <h5>Sangat Bagus</h5>
+                    <p>Dari 1000 Review</p>
+                </div>
+            </div>
+            <div class="row review2">
+                <div class="col-md-4">
+                    <div class="review2-card">
+                        <div class="review2-header">
+                            <div class="review2-left">
+                                <img src="asset/images/user.jpg" class="rounded-circle me-2" alt="user">
+                                <p>KaiB</p>
+                                <small class="text-muted"><span class="badge bg-light text-dark ms-2">Verified</span></small>
+                            </div>
+                            <div class="review2-right">
+                                <div class="text-warning mb-2">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>
+                            “Waking up to this view is unreal!”
+                        </p>
+                        <p style=" font-style: italic;">
+                            I stayed for 3 nights and the view was the highlight. Directly facing the ocean, with the sounds of waves as your background – super relaxing. Worth the price for sure.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review2-card">
+                        <div class="review2-header">
+                            <div class="review2-left">
+                                <img src="asset/images/user.jpg" class="rounded-circle me-2" alt="user">
+                                <p>KaiB</p>
+                                <small class="text-muted"><span class="badge bg-light text-dark ms-2">Verified</span></small>
+                            </div>
+                            <div class="review2-right">
+                                <div class="text-warning mb-2">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>
+                            “Perfect for sunrise lovers!”
+                        </p>
+                        <p style="font-style: italic;">
+                            The balcony gives you a clear view of the bay and the morning sun. I literally sat there with coffee every morning. The room itself is cozy and clean. Loved the natural wooden vibe!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review2-card">
+                        <div class="review2-header">
+                            <div class="review2-left">
+                                <img src="asset/images/user.jpg" class="rounded-circle me-2" alt="user">
+                                <p>KaiB</p>
+                                <small class="text-muted"><span class="badge bg-light text-dark ms-2">Verified</span></small>
+                            </div>
+                            <div class="review2-right">
+                                <div class="text-warning mb-2">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>
+                            “Private, peaceful, and scenic.”
+                        </p>
+                        <p style="font-style: italic;">
+                            Great spot for couples or anyone needing a reset. I felt completely disconnected from the noise of the city. Simple room, but the sea view makes it 5-star worthy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+    <!-- Sea View Included -->
+     <section class="sView-included">
+        <div class="container mt-5">
+            <h3>
+                What's Included
+            </h3>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/Resto.png" alt="Resto Icon" class="include-icon">
+                        <p>Restoran</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/Wifi.png" alt="Wifi Icon" class="include-icon">
+                        <p>Wi-Fi</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/AC.png" alt="AC Icon" class="include-icon">
+                        <p>AC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/TV.png" alt="Tv Icon" class="include-icon">
+                        <p>Television</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/Resep.png" alt="Resep Icon" class="include-icon">
+                        <p>24 Hours Receptionist</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/Gym.png" alt="Gym Icon" class="include-icon">
+                        <p>AC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/Eat.png" alt="Eat Icon" class="include-icon">
+                        <p>3x Eat</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/Showe.png" alt="Shower Icon" class="include-icon">
+                        <p>Shower</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/Dry.png" alt="Hair Dryer Icon" class="include-icon">
+                        <p>Hair Dryer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/Park.png" alt="Parking Lot Icon" class="include-icon">
+                        <p>Parking Lot</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="include-detail">
+                        <img src="asset/icon/Park.png" alt="No Smoking Area Icon" class="include-icon">
+                        <p>No Smoking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    
+    <!-- Location -->
+     <section class="location">
+        <div class="container mt-5">
+            <h3 class="location-title">Location</h3>
+            <div class="location-detail text-start mt-4">
+                <img src="asset/images/petaa.png" alt="Location Map" class="rounded">
+                <div class="location-info">
+                    <img src="asset/icon/Address.png" alt="location icon">
+                    <p>Jl. Trans Sulawesi, Botubarani, Kec. Kabila Bone, Kabupaten Bone Bolango, Gorontalo 96117</p>
+                </div>
+            </div>
+        </div>
+     </section>
+    
+     <!-- Accomodation Policy -->
+      <section class="accomodation">
+        <div class="container mt-5">
+            <h3 class="accomodation-title">
+                Accomodation Policy
+            </h3>
+            <div class="row mt-5 align-items-center">
+                <div class="col-md-4">
+                    <div class="accomodation-policy">
+                        <img src="asset/icon/Hotel.png" alt="Hotel Icon">
+                        <p>Check-in Procedure</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="check-policy">
+                        <div class="checkIn">
+                            <p>Check-in</p>
+                            <p>13:00 - 23:59</p>
+                        </div>
+                        <div class="checkOut">
+                            <p>Check-out</p>
+                            <p>12:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 align-items-start">
+                <div class="col-md-4">
+                    <div class="accomodation-policy">
+                        <img src="asset/icon/Plc.png" alt="Policy Icon">
+                        <p>Other Policies</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="other-policy">
+                        <div class="other-detail">
+                            <h5>Child</h5>
+                            <p>
+                                Guests of any age can stay here. <br>
+                                Children 13 years and above are considered adults. <br>
+                                Please ensure the age of the child staying matches the booking details. <br>
+                                If different, guests may be charged additional fees upon check-in.
+                            </p>
+                        </div>
+                        <div class="other-detail">
+                            <h5>Deposit</h5>
+                            <p>
+                                Guests do not need to pay a deposit upon check-in.
+                            </p>
+                        </div>
+                        <div class="other-detail">
+                            <h5>Food</h5>
+                            <p>
+                               3X/Day
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+    <!-- Room Type -->
+     <section class="sView-type">
+        <div class="container mt-5">
+            <h3 class="roomType-title">
+                Room Type
+            </h3>
+            <div class="row mt-5 type-card">
+                <div class="col-md-6">
+                    <div class="roomCard">
+                        <img src="asset/images/super.jpg" alt="Super King" class="rounded">
+                        <div class="roomCaption">
+                            Super King Bed Room
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="roomCard">
+                        <img src="asset/images/twin bed room.jpg" alt="Twin" class="rounded">
+                        <div class="roomCaption">
+                            Twin Bed Room
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <footer class="footer mt-4">
+        <div class="footer-container">
+            <div class="footer-columns">
+            
+            <!-- Kolom Home -->
+            <div class="footer-column">
+                <h5>Home</h5>
+                <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#mission">Mission</a></li>
+                <li><a href="index.html#why">Why Goro Adventure?</a></li>
+                <li><a href="index.html#teams">Teams</a></li>
+                <li><a href="index.html#travelogue">Travelogue</a></li>
+                <li><a href="index.html#resort">Resort</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Favorite Dive -->
+            <div class="footer-column">
+                <h5>Favorite Dive</h5>
+                <ul>
+                <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
+                <li><a href="divesites.html#biluhu">Biluhu</a></li>
+                <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
+                <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
+                <li><a href="divesites.html#houseReef">House Reef</a></li>
+                <li><a href="divesites.html#boselSoputra">Bosel Soputra</a></li>
+                <li><a href="divesites.html#boselPrincess">Bosel Princess Mahena</a></li>
+                <li><a href="divesites.html#tamboMuck">Tambo Muck</a></li>
+                <li><a href="divesites.html#whalesharkPoint">Whaleshark Point</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Deals -->
+            <div class="footer-column">
+                <h5>Deals</h5>
+                <ul>
+                <li><a href="deals.html#deals">Deals</a></li>
+                <li><a href="deals.html#package">Package</a></li>
+                <li><a href="deals.html#resort">Resort</a></li>
+                <li><a href="deals.html#disclaimer">Disclaimer</a></li>
+                <li><a href="deals.html#addons">Add Ons</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Water Course -->
+            <div class="footer-column">
+                <h5>Water Course</h5>
+                <ul>
+                <li><a href="course.html#waterCourse">Water Course</a></li>
+                <li><a href="course.html#partners">Partners</a></li>
+                <li><a href="course.html#course">Course</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Gallery & Review -->
+            <div class="footer-column">
+                <h5>Gallery & Review</h5>
+                <ul>
+                <li><a href="gr.html#gallery">Gallery</a></li>
+                <li><a href="gr.html#review">Review</a></li>
+                </ul>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="footer-divider"></div>
+
+
+            <!-- Contact -->
+            <div class="footer-column contact-detail">
+                <h5>CONTACT</h5>
+                <ul>
+                <li><i class="fa fa-map-marker-alt"></i>Jl. Trans Sulawesi, Botubarani, Kec. Kabila Bone, Kabupaten Bone Bolango, Gorontalo 96117</li>
+                <li><i class="fa fa-phone"></i> +6281242963516 (Mr Yunan)</li>
+                <li><i class="fa fa-phone"></i> +628598366308 (Mr Daniel)</li>
+                <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
+                </ul>
+            </div>
+            
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h5>SOCIAL MEDIA</h5>
+                <div class="social-icons">
+                <a href="#"><img src="asset/icon/ig (2).png" alt="Ig Icon">
+                </a>
+                <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/fb.png" alt="Ig Icon">
+                </a>
+                <a href="#">
+                    <img src="asset/icon/Tiktok.png" alt="Ig Icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank">
+                    <img src="asset/icon/yt.png" alt="Ig Icon">
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

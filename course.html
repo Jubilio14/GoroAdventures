@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: gabarito;
+            background-color: #27235D;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            height: 90px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1A1A3D !important;
+            margin: 0 10px;
+        }
+
+        .btn-journey {
+            border: 2px solid #1A1A3D;
+            font-weight: bold;
+            font-size: 18px;
+            color: #1A1A3D;
+            border-radius: 10px;
+            padding: 6px 16px;
+            text-decoration: none;
+        }
+
+        .btn-journey:hover {
+            background-color: #1A1A3D;
+            color: white;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            color: #1A1A3D;
+            cursor: pointer;
+        }
+
+        /* course */
+        .course {
+            position: relative;
+            background: url('asset/images/course.jpg') no-repeat center center/cover;
+            height: 757px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .course-overlay {
+            background: rgba(0, 0, 0, 0.400);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .course-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .course-content h1 {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 100%;
+        }
+
+        /* explore */
+
+        .explore {
+            color: white;
+        }
+
+        .explore-title {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 100%;
+        }
+
+        .explore-divider {
+            width: 80%;
+            height: 4px;
+            background-color: white;
+            border-top: 5px solid;
+            margin: 10px auto 30px;
+        }
+
+        .explore-content p {
+            font-size: 24px;
+            font-weight: 500;
+        }
+        
+        .explore-content .italic-text {
+            font-family: Arial;
+            font-size: 32px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* Partner */
+        .partner {
+            background-color: white;
+            color: #27235D;
+        }
+
+        .partner-title {
+            font-size: 48px;
+            font-weight: 500;
+        }
+
+        .partner-divider {
+            width: 80%;
+            height: 4px;
+            background-color: #27235D;
+            border-top: 5px solid;
+            margin: 10px auto 30px;
+        }
+
+        .partner-img {
+            width: 300px;
+            height: 300px;
+        }
+
+        .partner-text {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 100%;
+            margin-top: 20px;
+        }
+        
+        /* Course 2 */
+        .course2 {
+            color: white;
+        }
+
+        .course2-title {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 100%;
+        }
+
+        .course2-divider {
+            width: 80%;
+            height: 4px;
+            background-color: white;
+            border-top: 5px solid;
+            margin: 10px auto 30px;
+        }
+
+        .course2-card {
+            color: #27235D;
+            background-color: white;
+            display: flex;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 629px;         
+            height: 306px;        
+            
+        }
+                
+
+        .img-card img {
+            width: 266px;         
+            height: 274px;        
+            object-fit: cover;
+            margin: 16px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .info-card {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .info-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .info-header h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .info-price {
+            color: red;
+            font-size: 10px;
+            font-weight: 900;
+            line-height: 100%;
+            margin: 0;
+        }
+
+        .info-detail {
+            list-style: none;
+            padding: 4px 0;
+            gap: 8px;
+        }
+
+        .info-detail li {
+            display: flex;
+            align-items: flex-start;
+            font-size: 12px;
+            font-weight: 400;
+            text-align: left;
+        }
+
+        .info-detail img {
+            width: 12px;
+            height: 12px;
+            margin-right: 8px;
+            margin-top: 3px;
+        }
+
+        /* footer */
+        .footer {
+            background-color: white;
+            padding: 20px;
+            color: #27235D;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1 1 150px;
+        }
+
+        .footer-column h5 {
+            font-size: 16px;
+            font-style: bold;
+            font-weight: 800;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        
+        .footer-divider {
+            width: 1px;
+            background-color: #27235D;
+            height: 25  0px;
+            margin: 0 30px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #27235D;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            border: 2px solid #27235D;
+            border-radius: 4px;
+            gap: 10px;
+            height: 34px;
+            width: 34px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .social-icons img {
+            height: 15px;
+            width: 15px;
+        }
+        
+        /* Whatsapp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            z-index: 999;
+            padding: 10px;
+        }
+
+        .whatsapp-float img {
+            width: 40px;
+            height: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+            <img src="asset/images/Logo.png" alt="Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="divesites.html">Dive Sites</a></li>
+                <li class="nav-item"><a class="nav-link" href="deals.html">Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="course.html">Course</a></li>
+                <li class="nav-item"><a class="nav-link" href="gr.html">Galery & Review</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-search search-icon"></i>
+                <a href="deals.html" class="btn btn-journey">Start Your Journey</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Whatsapp -->
+    <a href="https://wa.me/6281242963516" class="whatsapp-float" target="_blank">
+        <img src="asset/icon/WA.png" alt="WhatsApp">
+    </a>
+
+    <!-- Course Section -->
+    <section class="course">
+        <div class="course-overlay"></div>
+            <div class="course-content">
+                <h1>
+                COURSE
+                </h1>
+            </div>
+    </section>
+
+    <!-- Explore Section -->
+     <section class="explore text-center py-4" id="waterCourse">
+        <h2 class="explore-title">Explore the Depth with Us</h2>
+        <div class="explore-divider"></div>
+        <div class="explore-content">
+            <p>
+                Dive into unforgettable underwater adventures with our curated courses and exclusive packages. Whether yo're a <br>
+                beginner or looking to level up your diving skills.
+            </p>
+            <p class="italic-text">
+                Experience freedom beneath the waves sustainably and memorably.
+            </p>
+        </div>
+     </section>
+
+     <!-- Partner Section -->
+      <section class="partner text-center py-4" id="partners">
+        <h2 class="partner-title">Our Partners</h2>
+        <div class="partner-divider"></div>
+        <div class="container mt-4">
+            <img src="asset/images/ITDA.png" alt="ITDA" class="partner-img">
+            <p class="partner-text">International Technical Diving Agency</p>
+        </div>
+      </section>
+
+      <!-- Course2 Section -->
+       <section class="course2 text-center py-4" id="course">
+        <h2 class="course2-title">Course</h2>
+        <div class="course2-divider"></div>
+        <div class="container mt-4">
+            <div class="row justify-content-center gx-4 gy-4">
+                <!-- Open Water Course -->
+                 <div class="col-lg-6 d-flex justify-content-center">
+                    <div class="course2-card">
+                        <div class="img-card">
+                            <img src="asset/images/course.jpg" alt="open water course" >
+                        </div>
+                        <div class="info-card">
+                            <div class="info-header">
+                                <h3>Open Water Course</h3>
+                                <p class="info-price">IDR 7.500.000/PAX</p>
+                            </div>
+                            <div class="info-detail">
+                                <li><img src="asset/icon/injury1.png" >Gorontalo</li>
+                                <li><img src="asset/icon/weather1.png" >5 Dives</li>
+                                <li><img src="asset/icon/weather1.png" >Professional Training</li>
+                                <li><img src="asset/icon/weather1.png" >Equipment Rental</li>
+                                <li><img src="asset/icon/weather1.png" >Certification</li>
+                                <li><img src="asset/icon/weather1.png" >4 Days and 3 Nights</li>
+                                <li><img src="asset/icon/weather1.png" >3 Meals per Day</li>
+                                <li>Bonus</li>
+                                <li><img src="asset/icon/weather1.png" >Free Airport Pick Up & Drop Off</li>
+                                <li><img src="asset/icon/weather1.png" >Dive with the whale sharks, experience vibrant coral 
+                                    reefs, exotic marine life, and the thrill of scuba diving 
+                                    in one of Indonesia's top dive spots.
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- Open Water Course -->
+                 <div class="col-lg-6 d-flex justify-content-center">
+                    <div class="course2-card">
+                        <div class="img-card">
+                            <img src="asset/images/openwater2.png" alt="open water course">
+                        </div>
+                        <div class="info-card">
+                            <div class="info-header">
+                                <h3>Open Water Course</h3>
+                                <p class="info-price">IDR 7.500.000/PAX</p>
+                            </div>
+                            <div class="info-detail">
+                                <li><img src="asset/icon/injury1.png" >Gorontalo</li>
+                                <li><img src="asset/icon/weather1.png" >5 Dives</li>
+                                <li><img src="asset/icon/weather1.png" >Professional Training</li>
+                                <li><img src="asset/icon/weather1.png" >Equipment Rental</li>
+                                <li><img src="asset/icon/weather1.png" >Certification</li>
+                                <li><img src="asset/icon/weather1.png" >4 Days and 3 Nights</li>
+                                <li><img src="asset/icon/weather1.png" >3 Meals per Day</li>
+                                <li>Bonus</li>
+                                <li><img src="asset/icon/weather1.png" >Free Airport Pick Up & Drop Off</li>
+                                <li><img src="asset/icon/weather1.png" >Dive with the whale sharks, experience vibrant coral 
+                                    reefs, exotic marine life, and the thrill of scuba diving 
+                                    in one of Indonesia's top dive spots.
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+       </section>
+
+       <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+            
+            <!-- Kolom Home -->
+            <div class="footer-column">
+                <h5>Home</h5>
+                <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#mission">Mission</a></li>
+                <li><a href="index.html#why">Why Goro Adventure?</a></li>
+                <li><a href="index.html#teams">Teams</a></li>
+                <li><a href="index.html#travelogue">Travelogue</a></li>
+                <li><a href="index.html#resort">Resort</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Favorite Dive -->
+            <div class="footer-column">
+                <h5>Favorite Dive</h5>
+                <ul>
+                <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
+                <li><a href="divesites.html#biluhu">Biluhu</a></li>
+                <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
+                <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
+                <li><a href="divesites.html#houseReef">House Reef</a></li>
+                <li><a href="divesites.html#boselSoputra">Bosel Soputra</a></li>
+                <li><a href="divesites.html#boselPrincess">Bosel Princess Mahena</a></li>
+                <li><a href="divesites.html#tamboMuck">Tambo Muck</a></li>
+                <li><a href="divesites.html#whalesharkPoint">Whaleshark Point</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Deals -->
+            <div class="footer-column">
+                <h5>Deals</h5>
+                <ul>
+                <li><a href="deals.html#deals">Deals</a></li>
+                <li><a href="deals.html#package">Package</a></li>
+                <li><a href="deals.html#resort">Resort</a></li>
+                <li><a href="deals.html#disclaimer">Disclaimer</a></li>
+                <li><a href="deals.html#addons">Add Ons</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Water Course -->
+            <div class="footer-column">
+                <h5>Water Course</h5>
+                <ul>
+                <li><a href="course.html#waterCourse">Water Course</a></li>
+                <li><a href="course.html#partners">Partners</a></li>
+                <li><a href="course.html#course">Course</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Gallery & Review -->
+            <div class="footer-column">
+                <h5>Gallery & Review</h5>
+                <ul>
+                <li><a href="gr.html#gallery">Gallery</a></li>
+                <li><a href="gr.html#review">Review</a></li>
+                </ul>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="footer-divider"></div>
+
+
+            <!-- Contact -->
+            <div class="footer-column contact-detail">
+                <h5>CONTACT</h5>
+                <ul>
+                <li><i class="fa fa-map-marker-alt"></i>Jl. Trans Sulawesi, Botubarani, Kec. Kabila Bone, Kabupaten Bone Bolango, Gorontalo 96117</li>
+                <li><i class="fa fa-phone"></i> +6281242963516 (Mr Yunan)</li>
+                <li><i class="fa fa-phone"></i> +628598366308 (Mr Daniel)</li>
+                <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
+                </ul>
+            </div>
+            
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h5>SOCIAL MEDIA</h5>
+                <div class="social-icons">
+                <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Ig Icon">
+                </a>
+                <a href="#"><img src="asset/icon/fb.png" alt="Ig Icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank">
+                    <img src="asset/icon/Tiktok.png" alt="Ig Icon">
+                </a>
+                <a href="#">
+                    <img src="asset/icon/yt.png" alt="Ig Icon">
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
