@@ -98,7 +98,7 @@
 
     .seafood7-img {
         width: 100%;
-        height: 348px;
+        height: 225px;
         object-fit: cover;
     }
 
@@ -120,6 +120,12 @@
         object-fit: cover;
     }
 
+    .lobster-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
     /* drink */
     .drink {
         color: white;
@@ -134,6 +140,37 @@
         height: 250px;
         object-fit: cover;
     }
+
+    .small-card {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 6px;
+            height: 250px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .small-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Tambahkan ini agar overlay penuh */
+            background: rgba(0, 0, 0, 0.3); /* Hitam transparan */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Konten di bawah */
+            padding: 20px;
+        }
+
+        .small-overlay .small-price {
+            color: white;
+            font-weight: 900;
+            font-size: 18px;
+            font-weight: 900;
+        }
 
     /* footer */
     .footer {
@@ -244,8 +281,8 @@
 <nav class="navbar fixed-top navbar-expand-lg">
   <div class="container">
     <!-- Logo -->
-    <a class="navbar-brand" href="#">
-      <img src="asset/images/Logo.png" alt="Logo">
+    <a class="navbar-brand" href="index.html">
+      <img src="asset/images/Logobaru.jpg" alt="Logo">
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -273,7 +310,7 @@
 </nav>
 
 <!-- Whatsapp -->
-  <a href="https://wa.me/6281242963516" class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/6598366308" class="whatsapp-float" target="_blank">
     <img src="asset/icon/WA.png" alt="WhatsApp">
   </a>
 
@@ -300,12 +337,10 @@
                     <div class="col-md-4 d-flex flex-column gap-4">
                         <img src="asset/images/food1.png" alt="seafood 1" class="seafood-img rounded">
                         <img src="asset/images/food3.png" alt="seafood 3" class="seafood-img rounded">
-                        <img src="asset/images/food5.png" alt="seafood 5" class="seafood-img rounded">
                     </div>
                     <div class="col-md-4 d-flex flex-column gap-4">
                         <img src="asset/images/food2.png" alt="seafood 2" class="seafood-img rounded">
                         <img src="asset/images/food4.png" alt="seafood 4" class="seafood-img rounded">
-                        <img src="asset/images/food6.png" alt="seafood 6" class="seafood-img rounded">
                     </div>
                     <div class="col-md-4">
                         <img src="asset/images/food7.png" alt="seafood 7" class="seafood7-img rounded">
@@ -333,7 +368,7 @@
                 </div>
                 <div class="row align-items-center">
                     <div class="col-md-6 offset-md-3">
-                        <img src="asset/images/Meat1.png" alt="meat 1" class="meat-img rounded">
+                        <img src="asset/images/Meat3.png" alt="meat 1" class="meat-img rounded">
                     </div>
                 </div>
             </div>
@@ -399,53 +434,105 @@
                 </div>
             </div>
         </div>
+
+        <div class="row g-4 mt-4">
+            <div class="col-md-6">
+                <h2>Lobster and Crab Can be Ordered <span style="color: red; font-size: 60px;">@650.000/Kg</span></h2>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="asset/images/food5.png" alt="seafood 1" class="lobster-img rounded">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="asset/images/food6.png" alt="seafood 2" class="lobster-img rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
   </section>
 
   <section class="drink py-4">
-    <h1 class="drink-title">Our Drink Menu</h1>
+    <h1 class="drink-title">Fruit Juice and Beer</h1>
     <div class="food-divider"></div>
     <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row">
-                    <h2>Fruit Juice IDR 35.000/Glass</h2>
-                    <ul>
-                        <li>Pineapple</li>
-                        <li>Orange</li>
-                        <li>Dragon</li>
-                        <li>Water Melon</li>
-                        <li>Soursop</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <h2>Alcohol IDR 80.000/Glass</h2>
-                    <ul>
-                        <li>Beer Bintang</li>
-                        <li>Whiskey</li>
-                        <li>Gin</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <h2>Cocktail with Gin IDR 50.000/Glass</h2>
-                    <ul>
-                        <li>Pineapple</li>
-                        <li>Orange</li>
-                        <li>Dragon</li>
-                        <li>Water Melon</li>
-                        <li>Soursop</li>
-                    </ul>
+        <div class="row justify-content-center">
+            <div class="col-lg-2">
+                <div class="small-card" style="background-image: url('asset/images/coconut.png');">
+                    <div class="small-overlay text-center">
+                        <p class="small-price">IDR <span class="small">30.000</span></p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="row mb-2">
-                    <img src="asset/images/drink1.png" alt="drink 1" class="drink-img rounded">
+            <div class="col-lg-2">
+                <div class="small-card" style="background-image: url('asset/images/beer.png');">
+                    <div class="small-overlay text-center">
+                        <p class="small-price">IDR <span class="small">80.000</span></p>
+                    </div>
                 </div>
-                <div class="row">
-                    <img src="asset/images/drink2.png" alt="drink 2" class="drink-img rounded">
+            </div>
+            <div class="col-lg-2">
+                <div class="small-card" style="background-image: url('asset/images/semangka.png');">
+                    <div class="small-overlay text-center">
+                        <p class="small-price">IDR <span class="small">30.000</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="small-card" style="background-image: url('asset/images/sirsak.png');">
+                    <div class="small-overlay text-center">
+                        <p class="small-price">IDR <span class="small">30.000</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="small-card" style="background-image: url('asset/images/nanas.png');">
+                    <div class="small-overlay text-center">
+                        <p class="small-price">IDR <span class="small">30.000</span></p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+  </section>
+
+  <section class="drink py-4">
+    <h1 class="drink-title">Cocktail</h1>
+    <div class="food-divider"></div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="small-card" style="background-image: url('asset/images/gin1.png');">
+                    <div class="small-overlay text-center">
+                        <p class="small-price">IDR <span class="small">80.000</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="small-card" style="background-image: url('asset/images/gin2.png');">
+                    <div class="small-overlay text-center">
+                        <p class="small-price">IDR <span class="small">80.000</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="small-card" style="background-image: url('asset/images/gin3.png');">
+                    <div class="small-overlay text-center">
+                        <p class="small-price">IDR <span class="small">80.000</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="small-card" style="background-image: url('asset/images/gin4.png');">
+                    <div class="small-overlay text-center">
+                        <p class="small-price">IDR <span class="small">80.000</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1>Free Flow Beer <span style="color: red;">@SGD50</span></h1>
+        <h1>Whiskey 700ml bottle <span style="color: red;">@SGD90</span></h1>
     </div>
   </section>
 
@@ -522,7 +609,7 @@
                 <h5>CONTACT</h5>
                 <ul>
                 <li><i class="fa fa-map-marker-alt"></i>Jl. Trans Sulawesi, Botubarani, Kec. Kabila Bone, Kabupaten Bone Bolango, Gorontalo 96117</li>
-                <li><i class="fa fa-phone"></i> +628598366308 (Mr Daniel)</li>
+                <li><i class="fa fa-phone"></i> +6598366308 (Mr Daniel)</li>
                 <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
                 </ul>
             </div>
@@ -533,7 +620,7 @@
                 <div class="social-icons">
                 <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Ig Icon">
                 </a>
-                <a href="#"><img src="asset/icon/fb.png" alt="Ig Icon">
+                <a href="https://www.facebook.com/goroadventures" target="_blank"><img src="asset/icon/fb.png" alt="Ig Icon">
                 </a>
                 <a href="https://www.tiktok.com/search?q=goroadventures&t=1716469615052" target="_blank">
                     <img src="asset/icon/Tiktok.png" alt="Ig Icon">
