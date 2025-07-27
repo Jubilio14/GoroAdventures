@@ -90,41 +90,17 @@
         margin: 10px auto 30px;
     }
 
-    .seafood-img {
+    .foodImg{
         width: 100%;
-        height: 100px;
+        height: 200px;
         object-fit: cover;
     }
-
-    .seafood7-img {
-        width: 100%;
-        height: 225px;
-        object-fit: cover;
+    
+    .foodName {
+        font-size: 22px;
+        font-weight: 800;
     }
 
-    .meat-img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-    }
-
-    .veg-img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-    }
-
-    .brn-img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-    }
-
-    .lobster-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
 
     /* drink */
     .drink {
@@ -319,138 +295,82 @@
     <h1 class="food-title">Our Food Menu <Span>IDR 100.000/Pax</Span></h1>
     <div class="food-divider"></div>
     <div class="container mt-4">
-        <div class="row g-4">
-            <div class="col-md-6">
-                <h2>Seafood</h2>
-                <ul>
-                    <li>Calamari</li>
-                    <li>Squid with chili</li>
-                    <li>Fried Prawns</li>
-                    <li>Fried Fish</li>
-                    <li>BBQ Tuna Head</li>
-                    <li>Seafood Omelet</li>
-                    <li>Steam Prawns</li>
-                </ul>
+        <div class="row justify-content-center g-4">
+            <div class="col-md-3 text-center">
+                <img src="asset/images/food1.png" alt="Calamari" class="foodImg rounded">
+                <p class="foodName">Calamari</p>
             </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-4 d-flex flex-column gap-4">
-                        <img src="asset/images/food1.png" alt="seafood 1" class="seafood-img rounded">
-                        <img src="asset/images/food3.png" alt="seafood 3" class="seafood-img rounded">
-                    </div>
-                    <div class="col-md-4 d-flex flex-column gap-4">
-                        <img src="asset/images/food2.png" alt="seafood 2" class="seafood-img rounded">
-                        <img src="asset/images/food4.png" alt="seafood 4" class="seafood-img rounded">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="asset/images/food7.png" alt="seafood 7" class="seafood7-img rounded">
-                    </div>
-                </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/food5.png" alt="Squid Chili" class="foodImg rounded">
+                <p class="foodName">Squid with Chili</p>
             </div>
-        </div>
-        <div class="row g-4 mt-4">
-            <div class="col-md-6">
-                <h2>Meat</h2>
-                <ul>
-                    <li>Fried Chicken with Chili</li>
-                    <li>Fried Crispy Chicken</li>
-                    <li>Curry Chicken</li>
-                </ul>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/food2.png" alt="Fried Prawn" class="foodImg rounded">
+                <p class="foodName">Fried Prawn</p>
             </div>
-            <div class="col-md-6">
-                <div class="row mb-2">
-                    <div class="col-md-6">
-                        <img src="asset/images/Meat1.png" alt="meat 1" class="meat-img rounded">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="asset/images/Meat2.png" alt="meat 1" class="meat-img rounded">
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-md-6 offset-md-3">
-                        <img src="asset/images/Meat3.png" alt="meat 1" class="meat-img rounded">
-                    </div>
-                </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/food4.png" alt="Fried Fish" class="foodImg rounded">
+                <p class="foodName">Fried Fish</p>
             </div>
-        </div>
-        
-        <div class="row g-4 mt-4">
-            <div class="col-md-6">
-                <h2>Vegetables</h2>
-                <ul>
-                    <li>Egg Plant Indo Style</li>
-                    <li>Carrot Potato Soup</li>
-                    <li>Anchovies and Vegetables</li>
-                    <li>Bean Sprouts and Anchovies</li>
-                </ul>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/food7.png" alt="BBQ" class="foodImg rounded">
+                <p class="foodName">BBQ Tuna Head</p>
             </div>
-            <div class="col-md-6">
-                <div class="row mb-2">
-                    <div class="col-md-6">
-                        <img src="asset/images/veg1.png" alt="veg 1" class="veg-img rounded">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="asset/images/veg2.png" alt="veg 2" class="veg-img rounded">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="asset/images/veg3.png" alt="veg 3" class="veg-img rounded">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="asset/images/veg4.png" alt="veg 4" class="veg-img rounded">
-                    </div>
-                </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/food3.png" alt="Seafood Omelet" class="foodImg rounded">
+                <p class="foodName">Seafood Omelette</p>
             </div>
-        </div>
-
-        <div class="row g-4 mt-4">
-            <div class="col-md-6">
-                <h2>Bread / Rice / Noodles</h2>
-                <ul>
-                    <li>Pineapple Fried Rice</li>
-                    <li>Indo Fried Rice</li>
-                    <li>Fried Noodles</li>
-                    <li>Toast and Margarine</li>
-                    <li>French Toast</li>
-                </ul>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/food6.png" alt="Steam Prawn" class="foodImg rounded">
+                <p class="foodName">Steam Prawn</p>
             </div>
-            <div class="col-md-6">
-                <div class="row mb-2">
-                    <div class="col-md-6">
-                        <img src="asset/images/brn1.png" alt="brn 1" class="brn-img rounded">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="asset/images/brn2.png" alt="brn 2" class="brn-img rounded">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="asset/images/brn3.png" alt="brn 3" class="brn-img rounded">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="asset/images/brn4.png" alt="brn 4" class="brn-img rounded">
-                    </div>
-                </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/Meat1.png" alt="Fried Chicken" class="foodImg rounded">
+                <p class="foodName">Fried Crispy Chicken</p>
             </div>
-        </div>
-
-        <div class="row g-4 mt-4">
-            <div class="col-md-6">
-                <h2>Lobster and Crab Can be Ordered <span style="color: red; font-size: 60px;">@650.000/Kg</span></h2>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/Meat2.png" alt="Fried Chicken Chili" class="foodImg rounded">
+                <p class="foodName">Fried Chicken with Chili</p>
             </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="asset/images/food5.png" alt="seafood 1" class="lobster-img rounded">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="asset/images/food6.png" alt="seafood 2" class="lobster-img rounded">
-                    </div>
-                </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/Meat3.png" alt="Curry Chicken" class="foodImg rounded">
+                <p class="foodName">Curry Chicken</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/veg4.png" alt="Terong" class="foodImg rounded">
+                <p class="foodName">Egg Plant Indo Style</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/veg2.png" alt="Soup" class="foodImg rounded">
+                <p class="foodName">Carrot Potato Soup</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/veg3.png" alt="Anchovy" class="foodImg rounded">
+                <p class="foodName">Anchovies and Vegetables</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/veg1.png" alt="bean sprout" class="foodImg rounded">
+                <p class="foodName">Bean Sprouts and Anchovies</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/brn1.png" alt="Pineapple" class="foodImg rounded">
+                <p class="foodName">Pineapple Fried Rice</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/brn4.png" alt="Fried Rice" class="foodImg rounded">
+                <p class="foodName">Indo Fried Rice</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/brn3.png" alt="Fried Noodle" class="foodImg rounded">
+                <p class="foodName">Fried Noodle</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="asset/images/brn2.png" alt="Toast" class="foodImg rounded">
+                <p class="foodName">Toast and Margarine</p>
             </div>
         </div>
     </div>
+    <h3 style="text-align: center; font-weight: 800; font-style: italic;">Lobster and Crab can be Ordered <span style="color: red;">@650.000/Kg</span></h3>
   </section>
 
   <section class="drink py-4">
