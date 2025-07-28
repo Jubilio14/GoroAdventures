@@ -715,37 +715,90 @@
         }
 
         .footer-columns {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          gap: 30px;
+          flex-wrap: wrap;
+          gap: 10px;
         }
 
         .footer-column {
-          width: 100%;
-          max-width: 100%;
+          width: 48%;
         }
 
         .footer-divider {
           display: none;
         }
 
-        .footer-column ul li {
+        .contact-detail {
+          width: 100%;
+        }
+
+        .footer-column h5 {
           font-size: 14px;
+          margin-bottom: 10px;
+        }
+
+        .footer-column ul li {
+          font-size: 11px;
         }
 
         .social-icons {
-          display: flex;
-          justify-content: center;
-          gap: 10px;
+          margin-top: 10px;
         }
 
-        .footer-column ul li {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 6px;
-          text-align: center;
+        .social-icons a {
+          height: 30px;
+          width: 30px;
+        }
+
+        .social-icons img {
+          height: 14px;
+          width: 14px;
+        }
+
+        .testimoni-card {
+          margin-left: auto;
+          margin-right: auto;
+          height: auto;
+          min-height: 300px;
+          word-wrap: break-word;
+        }
+
+        .photo-section .row > div {
+          width: 100% !important;
+          margin-bottom: 20px;
+        }
+
+        .travelogue6 {
+          width: 100%;
+        }
+
+        .cardTitle, .cardInfo {
+          text-align: center !important;
+        }
+
+        .card-divider, .card-divider2 {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .cardImg {
+          margin-top: 15px;
+        }
+
+        .video-section {
+          height: 300px;
+        }
+
+        .video-txt h2 {
+          font-size: 24px;
+        }
+
+        .video-txt h1 {
+          font-size: 36px;
+        }
+
+        .video-btn {
+          font-size: 14px;
+          padding: 8px 12px;
         }
       }
 
@@ -1012,39 +1065,50 @@
                 <img src="asset/images/Travel15.png" alt="travelogue 15" class="travelogue8 rounded">
             </div>
         </div>
+        <!-- 1 -->
         <div class="row align-items-center text-end mt-4">
-            <div class="col-md-6">
-                <h3 class="cardTitle">GoRo Adventure Water Course</h3>
-                <div class="card-divider"></div>
-                <p class="cardInfo">GoRoAdventure Water Course offers an exciting, refreshing adventure perfect for thrill seekers and nature lovers a like!</p>
-                <a href="course.html" class="card-btn">View Trip</a>
-            </div>
-            <div class="col-md-6">
-                <img src="asset/images/cardImg.jpg" alt="card1" class="cardImg rounded">
-            </div>
+          <div class="col-md-6 order-2 order-md-1">
+            <h3 class="cardTitle">GoRo Adventure Water Course</h3>
+            <div class="card-divider"></div>
+            <p class="cardInfo">GoRoAdventure Water Course offers an exciting, refreshing adventure perfect for thrill seekers and nature lovers a like!</p>
+            <a href="course.html" class="card-btn">View Trip</a>
+          </div>
+          <div class="col-md-6 order-1 order-md-2">
+            <img src="asset/images/cardImg.jpg" alt="card1" class="cardImg rounded">
+          </div>
         </div>
+
+        <!-- 2 -->
         <div class="row align-items-center text-start mt-4">
-            <div class="col-md-6">
-                <img src="asset/images/cardImg2.jpg" alt="card1" class="cardImg rounded">
+          <div class="col-md-6 order-1 order-md-1">
+            <img src="asset/images/cardImg2.jpg" alt="card1" class="cardImg rounded">
+          </div>
+          <div class="col-md-6 order-2 order-md-2">
+            <h3 class="cardTitle">GoRo Adventure Luxury Tours</h3>
+            <div class="card-divider2"></div>
+            <p class="cardInfo">GoRoAdventure Luxury Tours offers premium, tailor made journeys that blend adventure with first class comfort and unforgettable experiences.</p>
+            
+            <!-- Tombol rata kanan di mobile -->
+            <div class="text-end text-md-start">
+              <a href="deals.html" class="card-btn">View Trip</a>
             </div>
-            <div class="col-md-6">
-                <h3 class="cardTitle">GoRo Adventure Luxury Tours</h3>
-                <div class="card-divider2"></div>
-                <p class="cardInfo">GoRoAdventure Luxury Tours offers premium, tailor made journeys that blend adventure with first class comfort and unforgettable experiences.</p>
-                <a href="deals.html" class="card-btn">View Trip</a>
-            </div>
+          </div>
         </div>
+
+
+        <!-- 3 -->
         <div class="row align-items-center text-end mt-4">
-            <div class="col-md-6">
-                <h3 class="cardTitle">GoRo Adventure Couple Tours</h3>
-                <div class="card-divider"></div>
-                <p class="cardInfo">GoRoAdventure Couple Tours creates unforgettable romantic adventures, perfectly designed for two.</p>
-                <a href="deals.html" class="card-btn">View Trip</a>
-            </div>
-            <div class="col-md-6">
-                <img src="asset/images/dive2.jpg" alt="card1" class="cardImg rounded">
-            </div>
+          <div class="col-md-6 order-2 order-md-1">
+            <h3 class="cardTitle">GoRo Adventure Couple Tours</h3>
+            <div class="card-divider"></div>
+            <p class="cardInfo">GoRoAdventure Couple Tours creates unforgettable romantic adventures, perfectly designed for two.</p>
+            <a href="deals.html" class="card-btn">View Trip</a>
+          </div>
+          <div class="col-md-6 order-1 order-md-2">
+            <img src="asset/images/dive2.jpg" alt="card1" class="cardImg rounded">
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -1063,102 +1127,91 @@
     </section>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-columns">
-            
-            <!-- Kolom Home -->
-            <div class="footer-column">
-                <h5>Home</h5>
-                <ul>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#mission">Mission</a></li>
-                <li><a href="index.html#why">Why Goro Adventure?</a></li>
-                <li><a href="index.html#teams">Teams</a></li>
-                <li><a href="index.html#travelogue">Travelogue</a></li>
-                <li><a href="index.html#resort">Resort</a></li>
-                </ul>
-            </div>
+  <div class="footer-container">
+    <div class="footer-columns">
+      <!-- Home -->
+      <div class="footer-column">
+        <h5>Home</h5>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#mission">Mission</a></li>
+          <li><a href="index.html#why">Why Goro Adventure?</a></li>
+          <li><a href="index.html#teams">Teams</a></li>
+          <li><a href="index.html#travelogue">Travelogue</a></li>
+          <li><a href="index.html#resort">Resort</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Favorite Dive -->
-            <div class="footer-column">
-                <h5>Favorite Dive</h5>
-                <ul>
-                <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
-                <li><a href="divesites.html#biluhu">Biluhu</a></li>
-                <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
-                <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
-                <li><a href="divesites.html#houseReef">House Reef</a></li>
-                <li><a href="divesites.html#boselSoputra">Bosel Soputra</a></li>
-                <li><a href="divesites.html#boselPrincess">Bosel Princess Mahena</a></li>
-                <li><a href="divesites.html#tamboMuck">Tambo Muck</a></li>
-                <li><a href="divesites.html#whalesharkPoint">Whaleshark Point</a></li>
-                </ul>
-            </div>
+      <!-- Favorite Dive -->
+      <div class="footer-column">
+        <h5>Favorite Dive</h5>
+        <ul>
+          <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
+          <li><a href="divesites.html#biluhu">Biluhu</a></li>
+          <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
+          <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
+          <li><a href="divesites.html#houseReef">House Reef</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Deals -->
-            <div class="footer-column">
-                <h5>Deals</h5>
-                <ul>
-                <li><a href="deals.html#deals">Deals</a></li>
-                <li><a href="deals.html#package">Package</a></li>
-                <li><a href="deals.html#resort">Resort</a></li>
-                <li><a href="deals.html#disclaimer">Disclaimer</a></li>
-                <li><a href="deals.html#addons">Add Ons</a></li>
-                </ul>
-            </div>
+      <!-- Deals -->
+      <div class="footer-column">
+        <h5>Deals</h5>
+        <ul>
+          <li><a href="deals.html#deals">Deals</a></li>
+          <li><a href="deals.html#package">Package</a></li>
+          <li><a href="deals.html#resort">Resort</a></li>
+          <li><a href="deals.html#disclaimer">Disclaimer</a></li>
+          <li><a href="deals.html#addons">Add Ons</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Water Course -->
-            <div class="footer-column">
-                <h5>Water Course</h5>
-                <ul>
-                <li><a href="course.html#waterCourse">Water Course</a></li>
-                <li><a href="course.html#partners">Partners</a></li>
-                <li><a href="course.html#course">Course</a></li>
-                </ul>
-            </div>
+      <!-- Course -->
+      <div class="footer-column">
+        <h5>Water Course</h5>
+        <ul>
+          <li><a href="course.html#waterCourse">Water Course</a></li>
+          <li><a href="course.html#partners">Partners</a></li>
+          <li><a href="course.html#course">Course</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Gallery & Review -->
-            <div class="footer-column">
-                <h5>Gallery & Review</h5>
-                <ul>
-                <li><a href="gr.html#gallery">Gallery</a></li>
-                <li><a href="gr.html#review">Review</a></li>
-                </ul>
-            </div>
+      <!-- Gallery & Review -->
+      <div class="footer-column">
+        <h5>Gallery & Review</h5>
+        <ul>
+          <li><a href="gr.html#gallery">Gallery</a></li>
+          <li><a href="gr.html#review">Review</a></li>
+        </ul>
+      </div>
 
-            <!-- Vertical Divider -->
-            <div class="footer-divider"></div>
+      <!-- Divider (hidden in mobile) -->
+      <div class="footer-divider"></div>
 
+      <!-- Contact -->
+      <div class="footer-column contact-detail">
+        <h5>CONTACT</h5>
+        <ul>
+          <li><i class="fa fa-map-marker-alt"></i> Jl. Trans Sulawesi, Botubarani, Gorontalo</li>
+          <li><i class="fa fa-phone"></i> +6598366308 (Mr Daniel)</li>
+          <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
+        </ul>
+      </div>
 
-            <!-- Contact -->
-            <div class="footer-column contact-detail">
-                <h5>CONTACT</h5>
-                <ul>
-                <li><i class="fa fa-map-marker-alt"></i>Jl. Trans Sulawesi, Botubarani, Kec. Kabila Bone, Kabupaten Bone Bolango, Gorontalo 96117</li>
-                <li><i class="fa fa-phone"></i> +6598366308 (Mr Daniel)</li>
-                <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
-                </ul>
-            </div>
-            
-            <!-- Social Media -->
-            <div class="footer-column">
-                <h5>SOCIAL MEDIA</h5>
-                <div class="social-icons">
-                <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Ig Icon">
-                </a>
-                <a href="https://www.facebook.com/goroadventures" target="_blank"><img src="asset/icon/fb.png" alt="Ig Icon">
-                </a>
-                <a href="https://www.tiktok.com/search?q=goroadventures&t=1716469615052" target="_blank">
-                    <img src="asset/icon/Tiktok.png" alt="Ig Icon">
-                </a>
-                <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank">
-                    <img src="asset/icon/yt.png" alt="Ig Icon">
-                </a>
-                </div>
-            </div>
-            </div>
+      <!-- Social Media -->
+      <div class="footer-column">
+        <h5>SOCIAL MEDIA</h5>
+        <div class="social-icons d-flex gap-2">
+          <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Instagram"></a>
+          <a href="https://www.facebook.com/goroadventures" target="_blank"><img src="asset/icon/fb.png" alt="Facebook"></a>
+          <a href="https://www.tiktok.com/search?q=goroadventures" target="_blank"><img src="asset/icon/Tiktok.png" alt="TikTok"></a>
+          <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank"><img src="asset/icon/yt.png" alt="YouTube"></a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -292,6 +292,113 @@
           margin: 0 auto;
           font-size: 20px;
         }
+
+        .footer-columns {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .footer-column {
+          width: 48%;
+        }
+
+        .footer-divider {
+          display: none;
+        }
+
+        .contact-detail {
+          width: 100%;
+        }
+
+        .footer-column h5 {
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+
+        .footer-column ul li {
+          font-size: 11px;
+        }
+
+        .social-icons {
+          margin-top: 10px;
+        }
+
+        .social-icons a {
+          height: 30px;
+          width: 30px;
+        }
+
+        .social-icons img {
+          height: 14px;
+          width: 14px;
+        }
+
+        .food h1 {
+          font-size: 28px;
+        }
+
+        .food-divider {
+          width: 60%;
+          margin: 10px auto 20px;
+        }
+
+        .foodImg {
+          height: auto;
+          aspect-ratio: 1/1; /* agar gambar tetap persegi */
+          margin-bottom: 10px;
+        }
+
+        .foodName {
+          font-size: 16px;
+        }
+
+        .food .col-md-3 {
+          width: 50%;
+        }
+
+        @media (max-width: 575.98px) {
+          .food .col-md-3 {
+            width: 100%;
+          }
+
+          .food h3 {
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+
+        .drink h1 {
+          font-size: 24px;
+          text-align: center;
+        }
+
+        .drink .food-divider {
+          width: 60%;
+          margin: 10px auto 20px;
+        }
+
+        .small-card {
+          height: auto;
+          aspect-ratio: 3 / 4; /* agar tidak terlalu tinggi */
+          margin-bottom: 20px;
+        }
+
+        .drink .col-lg-2,
+        .drink .col-lg-3 {
+          width: 50%;
+        }
+
+        @media (max-width: 575.98px) {
+          .drink .col-lg-2,
+          .drink .col-lg-3 {
+            width: 100%;
+          }
+
+          .drink h1:last-of-type {
+            font-size: 18px;
+            margin-top: 20px;
+          }
+        }
       }
   </style>
 </head>
@@ -502,102 +609,90 @@
   </section>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-columns">
-            
-            <!-- Kolom Home -->
-            <div class="footer-column">
-                <h5>Home</h5>
-                <ul>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#mission">Mission</a></li>
-                <li><a href="index.html#why">Why Goro Adventure?</a></li>
-                <li><a href="index.html#teams">Teams</a></li>
-                <li><a href="index.html#travelogue">Travelogue</a></li>
-                <li><a href="index.html#resort">Resort</a></li>
-                </ul>
-            </div>
+  <div class="footer-container">
+    <div class="footer-columns">
+      <!-- Home -->
+      <div class="footer-column">
+        <h5>Home</h5>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#mission">Mission</a></li>
+          <li><a href="index.html#why">Why Goro Adventure?</a></li>
+          <li><a href="index.html#teams">Teams</a></li>
+          <li><a href="index.html#travelogue">Travelogue</a></li>
+          <li><a href="index.html#resort">Resort</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Favorite Dive -->
-            <div class="footer-column">
-                <h5>Favorite Dive</h5>
-                <ul>
-                <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
-                <li><a href="divesites.html#biluhu">Biluhu</a></li>
-                <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
-                <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
-                <li><a href="divesites.html#houseReef">House Reef</a></li>
-                <li><a href="divesites.html#boselSoputra">Bosel Soputra</a></li>
-                <li><a href="divesites.html#boselPrincess">Bosel Princess Mahena</a></li>
-                <li><a href="divesites.html#tamboMuck">Tambo Muck</a></li>
-                <li><a href="divesites.html#whalesharkPoint">Whaleshark Point</a></li>
-                </ul>
-            </div>
+      <!-- Favorite Dive -->
+      <div class="footer-column">
+        <h5>Favorite Dive</h5>
+        <ul>
+          <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
+          <li><a href="divesites.html#biluhu">Biluhu</a></li>
+          <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
+          <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
+          <li><a href="divesites.html#houseReef">House Reef</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Deals -->
-            <div class="footer-column">
-                <h5>Deals</h5>
-                <ul>
-                <li><a href="deals.html#deals">Deals</a></li>
-                <li><a href="deals.html#package">Package</a></li>
-                <li><a href="deals.html#resort">Resort</a></li>
-                <li><a href="deals.html#disclaimer">Disclaimer</a></li>
-                <li><a href="deals.html#addons">Add Ons</a></li>
-                </ul>
-            </div>
+      <!-- Deals -->
+      <div class="footer-column">
+        <h5>Deals</h5>
+        <ul>
+          <li><a href="deals.html#deals">Deals</a></li>
+          <li><a href="deals.html#package">Package</a></li>
+          <li><a href="deals.html#resort">Resort</a></li>
+          <li><a href="deals.html#disclaimer">Disclaimer</a></li>
+          <li><a href="deals.html#addons">Add Ons</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Water Course -->
-            <div class="footer-column">
-                <h5>Water Course</h5>
-                <ul>
-                <li><a href="course.html#waterCourse">Water Course</a></li>
-                <li><a href="course.html#partners">Partners</a></li>
-                <li><a href="course.html#course">Course</a></li>
-                </ul>
-            </div>
+      <!-- Course -->
+      <div class="footer-column">
+        <h5>Water Course</h5>
+        <ul>
+          <li><a href="course.html#waterCourse">Water Course</a></li>
+          <li><a href="course.html#partners">Partners</a></li>
+          <li><a href="course.html#course">Course</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Gallery & Review -->
-            <div class="footer-column">
-                <h5>Gallery & Review</h5>
-                <ul>
-                <li><a href="gr.html#gallery">Gallery</a></li>
-                <li><a href="gr.html#review">Review</a></li>
-                </ul>
-            </div>
+      <!-- Gallery & Review -->
+      <div class="footer-column">
+        <h5>Gallery & Review</h5>
+        <ul>
+          <li><a href="gr.html#gallery">Gallery</a></li>
+          <li><a href="gr.html#review">Review</a></li>
+        </ul>
+      </div>
 
-            <!-- Vertical Divider -->
-            <div class="footer-divider"></div>
+      <!-- Divider (hidden in mobile) -->
+      <div class="footer-divider"></div>
 
+      <!-- Contact -->
+      <div class="footer-column contact-detail">
+        <h5>CONTACT</h5>
+        <ul>
+          <li><i class="fa fa-map-marker-alt"></i> Jl. Trans Sulawesi, Botubarani, Gorontalo</li>
+          <li><i class="fa fa-phone"></i> +6598366308 (Mr Daniel)</li>
+          <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
+        </ul>
+      </div>
 
-            <!-- Contact -->
-            <div class="footer-column contact-detail">
-                <h5>CONTACT</h5>
-                <ul>
-                <li><i class="fa fa-map-marker-alt"></i>Jl. Trans Sulawesi, Botubarani, Kec. Kabila Bone, Kabupaten Bone Bolango, Gorontalo 96117</li>
-                <li><i class="fa fa-phone"></i> +6598366308 (Mr Daniel)</li>
-                <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
-                </ul>
-            </div>
-            
-            <!-- Social Media -->
-            <div class="footer-column">
-                <h5>SOCIAL MEDIA</h5>
-                <div class="social-icons">
-                <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Ig Icon">
-                </a>
-                <a href="https://www.facebook.com/goroadventures" target="_blank"><img src="asset/icon/fb.png" alt="Ig Icon">
-                </a>
-                <a href="https://www.tiktok.com/search?q=goroadventures&t=1716469615052" target="_blank">
-                    <img src="asset/icon/Tiktok.png" alt="Ig Icon">
-                </a>
-                <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank">
-                    <img src="asset/icon/yt.png" alt="Ig Icon">
-                </a>
-                </div>
-            </div>
-            </div>
+      <!-- Social Media -->
+      <div class="footer-column">
+        <h5>SOCIAL MEDIA</h5>
+        <div class="social-icons d-flex gap-2">
+          <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Instagram"></a>
+          <a href="https://www.facebook.com/goroadventures" target="_blank"><img src="asset/icon/fb.png" alt="Facebook"></a>
+          <a href="https://www.tiktok.com/search?q=goroadventures" target="_blank"><img src="asset/icon/Tiktok.png" alt="TikTok"></a>
+          <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank"><img src="asset/icon/yt.png" alt="YouTube"></a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

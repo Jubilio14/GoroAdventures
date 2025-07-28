@@ -641,7 +641,7 @@
         .day-card {
             flex: 0 0 100%;
         }
-              .navbar-collapse {
+        .navbar-collapse {
           background-color: white;
           padding: 1rem 0;
           border-radius: 0 0 10px 10px;
@@ -687,6 +687,122 @@
           display: block;
           margin: 0 auto;
           font-size: 20px;
+        }
+        .footer-columns {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .footer-column {
+          width: 48%;
+        }
+
+        .footer-divider {
+          display: none;
+        }
+
+        .contact-detail {
+          width: 100%;
+        }
+
+        .footer-column h5 {
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+
+        .footer-column ul li {
+          font-size: 11px;
+        }
+
+        .social-icons {
+          margin-top: 10px;
+        }
+
+        .social-icons a {
+          height: 30px;
+          width: 30px;
+        }
+
+        .social-icons img {
+          height: 14px;
+          width: 14px;
+        }
+
+        .package-container {
+            flex-direction: column;
+            width: 100% !important;
+            height: auto !important;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .package-img img {
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 20px;
+        }
+
+        .package-detail {
+            padding-top: 0;
+            text-align: center;
+        }
+
+        .package-detail h2 {
+            font-size: 24px;
+        }
+
+        .package-detail p {
+            font-size: 14px;
+        }
+
+        .resort-img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .resort-title {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .resort-price {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .resort-button {
+            display: block;
+            margin: 10px auto 0;
+            width: fit-content;
+        }
+
+        .small-card {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+
+        .small-overlay p {
+            font-size: 13px;
+        }
+
+        .small-price {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .disclaimer-icon {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            margin: 0 auto 10px;
+        }
+
+        .disclaimer-text {
+            font-size: 14px;
+            line-height: 1.6;
         }
         }
 
@@ -764,7 +880,7 @@
     <div class="package-divider"></div>
 
     <!-- package 1 -->
-    <div class="container package-container">
+    <div class="package-container d-flex justify-content-between align-items-start">
 
         <div class="package-img">
             <img src="asset/images/package1.png" alt="package 1">
@@ -850,7 +966,7 @@
     </div>
 
     <!-- package 2 -->
-    <div class="container package-container">
+    <div class="package-container d-flex justify-content-between align-items-start">
 
         <div class="package-img">
             <img src="asset/images/package1.png" alt="package 1">
@@ -925,7 +1041,7 @@
     </div>
 
     <!-- package 3 -->
-    <div class="container package-container">
+    <div class="package-container d-flex justify-content-between align-items-start">
 
         <div class="package-img">
             <img src="asset/images/package2.png" alt="package 1">
@@ -988,7 +1104,7 @@
     </div>
     </div>
 
-    <div class="container package-container">
+    <div class="package-container d-flex justify-content-between align-items-start">
 
         <div class="package-img">
             <img src="asset/images/trekking1.png" alt="package 1">
@@ -1033,7 +1149,7 @@
             <div class="row">
 
                 <!-- Sea View -->
-                <div class="col-md-6">
+                <div class="col-md-6 col-12 mb-4">
                     <div class="resorts-card">
                         <img src="asset/images/seaview.png" alt="Sea View" class="resorts-img rounded">
                         <div class="resorts-info">
@@ -1047,7 +1163,7 @@
                 </div>
 
                 <!-- Ground Floor -->
-                <div class="col-md-6">
+                <div class="col-md-6 col-12 mb-4">
                     <div class="resorts-card">
                         <img src="asset/images/super.jpg" alt="Ground Floor" class="resorts-img rounded">
                         <div class="resorts-info">
@@ -1070,7 +1186,7 @@
 
     <div class="container mt-4">
         <div class="row justify-content-center">
-            <div class="col-md-4 col-sm-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-12 mb-4 text-center">
                 <img src="asset/icon/injury1.png" alt="Injury" class="disclaimer-icon mb-3">
                 <p class="disclaimer-text">
                     GoroAdventures shall not be <br>
@@ -1080,7 +1196,7 @@
                     activities
                 </p>
             </div>
-            <div class="col-md-4 col-sm-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-12 mb-4 text-center">
                 <img src="asset/icon/weather1.png" alt="weather" class="disclaimer-icon mb-3">
                 <p class="disclaimer-text">
                     GoroAdventures is not liable for any <br>
@@ -1088,7 +1204,7 @@
                     bad weather conditions. <br>
                 </p>
             </div>
-            <div class="col-md-4 col-sm-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-12 mb-4 text-center">
                 <img src="asset/icon/change1.png" alt="change" class="disclaimer-icon mb-3">
                 <p class="disclaimer-text">
                     GoroAdventures reserves the right <br>
@@ -1109,7 +1225,7 @@
     <div class="container mt-4">
         <div class="row g-4">
             
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/airport.png');">
                     <div class="small-overlay text-start">
                         <p>Airport Transfer (One Way 4 Pax)</p>
@@ -1118,7 +1234,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/whalesk.png');">
                     <div class="small-overlay text-start">
                         <p>Diving with Whale Shark</p>
@@ -1127,7 +1243,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/addons1.jpg');">
                     <div class="small-overlay text-start">
                         <p>Transparent Canoe
@@ -1139,7 +1255,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/addons2.jpg');">
                     <div class="small-overlay text-start">
                         <p>Heartship Canoe
@@ -1151,7 +1267,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/addons3.jpg');">
                     <div class="small-overlay text-start">
                         <p>Hand Holding with Instructor
@@ -1163,7 +1279,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/sksnorkelling.png');">
                     <div class="small-overlay text-start">
                         <p>Whale Shark Snorkling</p>
@@ -1172,7 +1288,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/equipment.png');">
                     <div class="small-overlay text-start">
                         <p>Equipment</p>
@@ -1181,7 +1297,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/fotografer.png');">
                     <div class="small-overlay text-start">
                         <p>Photographer</p>
@@ -1190,7 +1306,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/addons4.png');">
                     <div class="small-overlay text-start">
                         <p>Cultural Dance</p>
@@ -1199,7 +1315,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/addons5.png');">
                     <div class="small-overlay text-start">
                         <p>Full Body Massage 90 Mins</p>
@@ -1208,7 +1324,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/addons6.png');">
                     <div class="small-overlay text-start">
                         <p>Horse Riding</p>
@@ -1217,7 +1333,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="small-card" style="background-image: url('asset/images/addons7.png');">
                     <div class="small-overlay text-start">
                         <p>Rattan Factory</p>
@@ -1230,102 +1346,90 @@
   </section>
 
   <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-columns">
-            
-            <!-- Kolom Home -->
-            <div class="footer-column">
-                <h5>Home</h5>
-                <ul>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#mission">Mission</a></li>
-                <li><a href="index.html#why">Why Goro Adventure?</a></li>
-                <li><a href="index.html#teams">Teams</a></li>
-                <li><a href="index.html#travelogue">Travelogue</a></li>
-                <li><a href="index.html#resort">Resort</a></li>
-                </ul>
-            </div>
+  <div class="footer-container">
+    <div class="footer-columns">
+      <!-- Home -->
+      <div class="footer-column">
+        <h5>Home</h5>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#mission">Mission</a></li>
+          <li><a href="index.html#why">Why Goro Adventure?</a></li>
+          <li><a href="index.html#teams">Teams</a></li>
+          <li><a href="index.html#travelogue">Travelogue</a></li>
+          <li><a href="index.html#resort">Resort</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Favorite Dive -->
-            <div class="footer-column">
-                <h5>Favorite Dive</h5>
-                <ul>
-                <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
-                <li><a href="divesites.html#biluhu">Biluhu</a></li>
-                <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
-                <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
-                <li><a href="divesites.html#houseReef">House Reef</a></li>
-                <li><a href="divesites.html#boselSoputra">Bosel Soputra</a></li>
-                <li><a href="divesites.html#boselPrincess">Bosel Princess Mahena</a></li>
-                <li><a href="divesites.html#tamboMuck">Tambo Muck</a></li>
-                <li><a href="divesites.html#whalesharkPoint">Whaleshark Point</a></li>
-                </ul>
-            </div>
+      <!-- Favorite Dive -->
+      <div class="footer-column">
+        <h5>Favorite Dive</h5>
+        <ul>
+          <li><a href="divesites.html#olele">Olele Jin Cave</a></li>
+          <li><a href="divesites.html#biluhu">Biluhu</a></li>
+          <li><a href="divesites.html#kaisumaru">Kaisumaru Shipwreck</a></li>
+          <li><a href="divesites.html#dutchColonial">Dutch Colonial Shipwreck</a></li>
+          <li><a href="divesites.html#houseReef">House Reef</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Deals -->
-            <div class="footer-column">
-                <h5>Deals</h5>
-                <ul>
-                <li><a href="deals.html#deals">Deals</a></li>
-                <li><a href="deals.html#package">Package</a></li>
-                <li><a href="deals.html#resort">Resort</a></li>
-                <li><a href="deals.html#disclaimer">Disclaimer</a></li>
-                <li><a href="deals.html#addons">Add Ons</a></li>
-                </ul>
-            </div>
+      <!-- Deals -->
+      <div class="footer-column">
+        <h5>Deals</h5>
+        <ul>
+          <li><a href="deals.html#deals">Deals</a></li>
+          <li><a href="deals.html#package">Package</a></li>
+          <li><a href="deals.html#resort">Resort</a></li>
+          <li><a href="deals.html#disclaimer">Disclaimer</a></li>
+          <li><a href="deals.html#addons">Add Ons</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Water Course -->
-            <div class="footer-column">
-                <h5>Water Course</h5>
-                <ul>
-                <li><a href="course.html#waterCourse">Water Course</a></li>
-                <li><a href="course.html#partners">Partners</a></li>
-                <li><a href="course.html#course">Course</a></li>
-                </ul>
-            </div>
+      <!-- Course -->
+      <div class="footer-column">
+        <h5>Water Course</h5>
+        <ul>
+          <li><a href="course.html#waterCourse">Water Course</a></li>
+          <li><a href="course.html#partners">Partners</a></li>
+          <li><a href="course.html#course">Course</a></li>
+        </ul>
+      </div>
 
-            <!-- Kolom Gallery & Review -->
-            <div class="footer-column">
-                <h5>Gallery & Review</h5>
-                <ul>
-                <li><a href="gr.html#gallery">Gallery</a></li>
-                <li><a href="gr.html#review">Review</a></li>
-                </ul>
-            </div>
+      <!-- Gallery & Review -->
+      <div class="footer-column">
+        <h5>Gallery & Review</h5>
+        <ul>
+          <li><a href="gr.html#gallery">Gallery</a></li>
+          <li><a href="gr.html#review">Review</a></li>
+        </ul>
+      </div>
 
-            <!-- Vertical Divider -->
-            <div class="footer-divider"></div>
+      <!-- Divider (hidden in mobile) -->
+      <div class="footer-divider"></div>
 
+      <!-- Contact -->
+      <div class="footer-column contact-detail">
+        <h5>CONTACT</h5>
+        <ul>
+          <li><i class="fa fa-map-marker-alt"></i> Jl. Trans Sulawesi, Botubarani, Gorontalo</li>
+          <li><i class="fa fa-phone"></i> +6598366308 (Mr Daniel)</li>
+          <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
+        </ul>
+      </div>
 
-            <!-- Contact -->
-            <div class="footer-column contact-detail">
-                <h5>CONTACT</h5>
-                <ul>
-                <li><i class="fa fa-map-marker-alt"></i>Jl. Trans Sulawesi, Botubarani, Kec. Kabila Bone, Kabupaten Bone Bolango, Gorontalo 96117</li>
-                <li><i class="fa fa-phone"></i> +6598366308 (Mr Daniel)</li>
-                <li><i class="fa fa-envelope"></i> goroadventure@gmail.com</li>
-                </ul>
-            </div>
-            
-            <!-- Social Media -->
-            <div class="footer-column">
-                <h5>SOCIAL MEDIA</h5>
-                <div class="social-icons">
-                <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Ig Icon">
-                </a>
-                <a href="https://www.facebook.com/goroadventures" target="_blank"><img src="asset/icon/fb.png" alt="Ig Icon">
-                </a>
-                <a href="https://www.tiktok.com/search?q=goroadventures&t=1716469615052" target="_blank">
-                    <img src="asset/icon/Tiktok.png" alt="Ig Icon">
-                </a>
-                <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank">
-                    <img src="asset/icon/yt.png" alt="Ig Icon">
-                </a>
-                </div>
-            </div>
-            </div>
+      <!-- Social Media -->
+      <div class="footer-column">
+        <h5>SOCIAL MEDIA</h5>
+        <div class="social-icons d-flex gap-2">
+          <a href="https://www.instagram.com/goroadventures/" target="_blank"><img src="asset/icon/ig (2).png" alt="Instagram"></a>
+          <a href="https://www.facebook.com/goroadventures" target="_blank"><img src="asset/icon/fb.png" alt="Facebook"></a>
+          <a href="https://www.tiktok.com/search?q=goroadventures" target="_blank"><img src="asset/icon/Tiktok.png" alt="TikTok"></a>
+          <a href="https://www.youtube.com/channel/UCovqA0-msbhhQpINDYwVPjA" target="_blank"><img src="asset/icon/yt.png" alt="YouTube"></a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
