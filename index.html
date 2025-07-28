@@ -51,6 +51,18 @@
       text-decoration: underline;
     }
 
+    .navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+
     .btn-journey {
       border: 2px solid #1A1A3D;
       font-weight: bold;
@@ -654,26 +666,45 @@
 
 
       @media (max-width: 991.98px) {
-      .navbar-nav {
-        text-align: center;
-      }
+  .navbar-collapse {
+    background-color: white;
+    padding: 1rem 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
 
-      .navbar .d-flex {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-      }
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-      .navbar-item,
-      .btn-journey {
-        width: 100%;
-        text-align: center;
-      }
+  .navbar .d-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px;
+    margin-top: 15px;
+  }
 
-      .search-icon {
-        margin: 10px 0;
-      }
-    }
+  .navbar-item,
+  .btn-journey {
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-icon {
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+  }
+}
+
+
   </style>
 </head>
 <body>
