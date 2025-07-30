@@ -475,6 +475,11 @@
         margin-bottom: 5px;
     }
 
+    /* Desktop tetap biasa saja (default) */
+    .card-text-wrapper {
+      display: block;
+    }
+
     .cardInfo {
         font-size: 14px;
         font-weight: 400;
@@ -772,12 +777,29 @@
         }
 
         .cardTitle, .cardInfo {
-          text-align: center !important;
+          text-align: start !important;
+        }
+
+        .card-text-wrapper {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .card-text-wrapper .cardInfo {
+          flex: 1 1 75%;
+          margin: 0;
+        }
+
+        .card-text-wrapper .card-btn {
+          flex: 0 0 auto;
+          white-space: nowrap;
         }
 
         .card-divider, .card-divider2 {
-          margin-left: auto;
-          margin-right: auto;
+          width: 100%;
         }
 
         .cardImg {
@@ -1067,29 +1089,30 @@
         </div>
         <!-- 1 -->
         <div class="row align-items-center text-end mt-4">
-          <div class="col-md-6 order-2 order-md-1">
+          <div class="col-md-6 order-1 order-md-1">
             <h3 class="cardTitle">GoRo Adventure Water Course</h3>
             <div class="card-divider"></div>
-            <p class="cardInfo">GoRoAdventure Water Course offers an exciting, refreshing adventure perfect for thrill seekers and nature lovers a like!</p>
-            <a href="course.html" class="card-btn">View Trip</a>
+            <div class="card-text-wrapper">
+              <p class="cardInfo">GoRoAdventure Water Course offers an exciting, refreshing adventure perfect for thrill seekers and nature lovers a like!</p>
+              <a href="course.html" class="card-btn">View Trip</a>
+            </div>
           </div>
-          <div class="col-md-6 order-1 order-md-2">
+          <div class="col-md-6 order-2 order-md-2">
             <img src="asset/images/cardImg.jpg" alt="card1" class="cardImg rounded">
           </div>
         </div>
 
         <!-- 2 -->
         <div class="row align-items-center text-start mt-4">
-          <div class="col-md-6 order-1 order-md-1">
+          <div class="col-md-6 order-2 order-md-1">
             <img src="asset/images/cardImg2.jpg" alt="card1" class="cardImg rounded">
           </div>
-          <div class="col-md-6 order-2 order-md-2">
+          <div class="col-md-6 order-1 order-md-2">
             <h3 class="cardTitle">GoRo Adventure Luxury Tours</h3>
             <div class="card-divider2"></div>
+            <div class="card-text-wrapper">
             <p class="cardInfo">GoRoAdventure Luxury Tours offers premium, tailor made journeys that blend adventure with first class comfort and unforgettable experiences.</p>
-            
-            <!-- Tombol rata kanan di mobile -->
-            <div class="text-end text-md-start">
+                        
               <a href="deals.html" class="card-btn">View Trip</a>
             </div>
           </div>
@@ -1098,13 +1121,15 @@
 
         <!-- 3 -->
         <div class="row align-items-center text-end mt-4">
-          <div class="col-md-6 order-2 order-md-1">
+          <div class="col-md-6 order-1 order-md-1">
             <h3 class="cardTitle">GoRo Adventure Couple Tours</h3>
             <div class="card-divider"></div>
+            <div class="card-text-wrapper">
             <p class="cardInfo">GoRoAdventure Couple Tours creates unforgettable romantic adventures, perfectly designed for two.</p>
             <a href="deals.html" class="card-btn">View Trip</a>
+            </div>
           </div>
-          <div class="col-md-6 order-1 order-md-2">
+          <div class="col-md-6 order-2 order-md-2">
             <img src="asset/images/dive2.jpg" alt="card1" class="cardImg rounded">
           </div>
         </div>
