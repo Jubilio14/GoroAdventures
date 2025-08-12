@@ -2,6 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/gorn2792/public_html/
-    - echo "Starting deploy at $(date)"
-    - rsync -av --delete --exclude='.git/' --exclude='vendor/' --exclude='storage/' --exclude='node_modules/' ./ $DEPLOYPATH/
-    - echo "Deploy finished at $(date)"
+    - rsync -av --exclude='.git/' --exclude='vendor/' --exclude='storage/' --exclude='node_modules/' ./ $DEPLOYPATH
