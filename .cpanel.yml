@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/gorn2792/public_html/
-    - rsync -av --exclude='.git/' --exclude='vendor/' --exclude='storage/' --exclude='node_modules/' ./ $DEPLOYPATH
+    - /bin/cp -R * $DEPLOYPATH
