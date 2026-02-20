@@ -164,24 +164,20 @@
         }
 
         .package-container {
-            display: flex;
-            background-color: rgb(255, 255, 255);
-            border-radius: 10px;
-            overflow: hidden;
-            color: #27235D;
-            flex-wrap: wrap;
-            padding: 12px;
-            gap: 12px;
-            width: 1281px;
-            height: 891px;
-            margin: 0 auto 50px;
-        }
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    margin: 0 auto 60px;
+    max-width: 1100px;
+    color: #27235D;
+}
 
-        .package-img img{
-            width: 588px;
-            height: 867px;
-            border-radius: 6px;
-        }
+     .package-img img{
+    width: 100%;
+    aspect-ratio: 16 / 9;   /* tinggi proporsional */
+    object-fit: cover;      /* crop rapi */
+    border-radius: 14px;
+}
 
         .package-detail {
             flex: 1;
@@ -190,40 +186,39 @@
             gap: 20px;
         }
 
-        .package-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .package-header-title{
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
 
-        .package-header h3 {
-            font-size: 24px;
-            font-weight: bold;
-        }
+.package-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 10px;
+}
+
 
         .package-price {
             color: red;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 44px;
         }
 
         .day-cards {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 800px;
-            gap: 20px;
-            margin: 0 auto;
-            justify-content: center;
-        }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
 
         .day-card {
-            background-color: #27235D;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            flex: 0 0 calc(50% - 10px); /* 2 kolom */
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        }
+    background-color: #27235D;
+    color: white;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 12px;
+}
 
         .day-card h5 {
             margin-bottom: 8px;
@@ -301,6 +296,29 @@
         .package-btn:hover {
             background-color: #44417a;
         }
+
+        .package-locations {
+    margin: 15px 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.location-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #27235D;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.chip-icon {
+    width: 12px;
+    height: 12px;
+}
 
         /* Dive Packages */
         .divePackage {
@@ -885,19 +903,21 @@
     <div class="package-divider"></div>
 
     <!-- package 1 -->
-    <div class="package-container d-flex justify-content-between align-items-start">
+    <div class="package-container">
 
-        <div class="package-img">
-            <img src="asset/images/7d6n.webp" loading="lazy" alt="package 1">
-        </div>
+    <h3 class="package-header-title">
+        7D6N Dive Itinerary In Gorontalo
+    </h3>
 
-         <div class="package-detail">
-            <div class="package-header">
-                <h3>7D6N Dive Itinerary In Gorontalo</h3>
-                <p class="package-price">SGD 1.400/PAX</p>
-            </div>
+    <div class="package-img">
+        <img src="asset/images/7d6n.webp">
+    </div>
 
-         <div class="day-cards">
+    <div class="package-header">
+        <p class="package-price">SGD 1.400/PAX</p>
+    </div>
+
+        <div class="day-cards">
             <div class="day-card">
                 <h5>Day 1</h5>
                 <ul>
@@ -966,23 +986,23 @@
                     <li><img src="asset/icon/Plane.png" class="icon">Transport to Airport</li>
                 </ul>
             </div>
-         </div>
     </div>
     </div>
 
     <!-- package 2 -->
-    <div class="package-container d-flex justify-content-between align-items-start">
+    <div class="package-container">
+        <h3 class="package-header-title">
+            6D5N Dive Itinerary In Gorontalo
+        </h3>
 
         <div class="package-img">
             <img src="asset/images/package1.webp" loading="lazy" alt="package 1">
         </div>
 
-         <div class="package-detail">
-            <div class="package-header">
-                <h3>6D5N Dive Itinerary In Gorontalo</h3>
-                <p class="package-price">SGD 1.200/PAX</p>
-            </div>
-
+        <div class="package-header">
+            <p class="package-price">SGD 1.200/PAX</p>
+        </div>
+        
          <div class="day-cards">
             <div class="day-card">
                 <h5>Day 1</h5>
@@ -1046,19 +1066,19 @@
     </div>
 
     <!-- package 3 -->
-    <div class="package-container d-flex justify-content-between align-items-start">
-
+    <div class="package-container">
+        <h3 class="package-header-title">
+            5D4N Dive Itinerary In Gorontalo
+        </h3>
         <div class="package-img">
             <img src="asset/images/package2.webp" loading="lazy" alt="package 1">
         </div>
 
-         <div class="package-detail">
-            <div class="package-header">
-                <h3>5D4N Dive Itinerary In Gorontalo</h3>
+        <div class="package-header">
                 <p class="package-price">SGD 1.000/PAX</p>
-            </div>
-
-         <div class="day-cards">
+        </div>
+        
+        <div class="day-cards">
             <div class="day-card">
                 <h5>Day 1</h5>
                 <ul>
@@ -1108,29 +1128,79 @@
          </div>
     </div>
     </div>
-
-    <div class="package-container d-flex justify-content-between align-items-start">
-
+    <div class="package-container">
+        <h3 class="package-header-title">
+            Trekking
+        </h3>
         <div class="package-img">
             <img src="asset/images/trekking1.webp" loading="lazy" alt="package 1">
         </div>
+         <div class="package-header">
+            <p class="package-price">SGD 160/PAX</p>
+        </div>
 
-         <div class="package-detail">
-            <div class="package-header">
-                <h3>Trekking</h3>
-                <p class="package-price">SGD 160/PAX</p>
-            </div>
+        <div class="package-locations">
+            <span class="location-chip">
+                <img src="asset/icon/Address.png" class="chip-icon">
+                Grassland & Golden Hill
+            </span>
 
+            <span class="location-chip">
+                <img src="asset/icon/Address.png" class="chip-icon">
+                Waterfall
+            </span>
+
+            <span class="location-chip">
+                <img src="asset/icon/Address.png" class="chip-icon">
+                Bird Watching
+            </span>
+
+            <span class="location-chip">
+                <img src="asset/icon/Address.png" class="chip-icon">
+                Waterfall
+            </span>
+
+            <span class="location-chip">
+                <img src="asset/icon/Address.png" class="chip-icon">
+                Caves
+            </span>
+
+            <span class="location-chip">
+                <img src="asset/icon/Address.png" class="chip-icon">
+                Bathing in the river
+            </span>
+
+            <span class="location-chip">
+                <img src="asset/icon/Address.png" class="chip-icon">
+                Spotting of Wilf Life
+            </span>
+
+            <span class="location-chip">
+                <img src="asset/icon/Address.png" class="chip-icon">
+                Sauna Caves
+            </span>
+
+            <span class="location-chip">
+                <img src="asset/icon/Address.png" class="chip-icon">
+                Rain Forest Camp
+            </span>
+
+            <span class="location-chip">
+                <img src="asset/icon/Address.png" class="chip-icon">
+                Maleo Sanctuary
+            </span>
+        </div>
+        
          <div class="day-cards">
             <div class="day-card wide">
-                <ul style="font-size: 18px;">
-                    <li>Trekking at the National Park</li>
-                    <li>Trek to the Hot Spring River</li>
-                    <li>Enter Sauna Cave</li>
-                    <li>Visit the Maleo Sanctuary and Release the Baby Maleo</li>
-                    <li>Dig Up the Maleo Egg from the Ground</li>
-                    <li>Visit the Park Ranger Post Look for the Tarises Monkey</li>
-                    <li>Include Videos & Photos</li>
+                <h5>Activities </h5>
+                <ul style="font-size: 14px;">
+                    <li><img src="asset/icon/Drive.png" loading="lazy" class="icon">Leave Resort @7am</li>
+                    <li><img src="asset/icon/Address.png" loading="lazy" class="icon">Arrive at Start Point @8.30am</li>
+                    <li><img src="asset/icon/Eat.png" loading="lazy" class="icon">Lunch @12pm</li>
+                    <li><img src="asset/icon/Hotel 1.png" loading="lazy" class="icon">Tea Break @2pm</li>
+                    <li><img src="asset/icon/Address.png" loading="lazy" class="icon">Finish Trekking @5pm</li>
+                    <li><img src="asset/icon/Hotel 1.png" loading="lazy" class="icon">Back to Resort @7pm</li>
                 </ul>
             </div>
             
@@ -1234,7 +1304,7 @@
                 <div class="small-card" style="background-image: url('asset/images/airport.webp');">
                     <div class="small-overlay text-start">
                         <p>Airport Transfer (One Way 4 Pax)</p>
-                        <p class="small-price">IDR <span class="small">500.000</span></p>
+                        <p class="small-price">SGD <span class="small">50</span></p>
                     </div>
                 </div>
             </div>
@@ -1243,7 +1313,7 @@
                 <div class="small-card" style="background-image: url('asset/images/whalesk.webp');">
                     <div class="small-overlay text-start">
                         <p>Diving with Whale Shark</p>
-                        <p class="small-price">IDR <span class="small">1.000.000</span></p>
+                        <p class="small-price">SGD <span class="small">100</span></p>
                     </div>
                 </div>
             </div>
@@ -1255,7 +1325,7 @@
                             <br>
                             Drone Capture Videos & Photos
                         </p>
-                        <p class="small-price">IDR <span class="small">1.000.000/pax</span></p>
+                        <p class="small-price">SGD <span class="small">100/pax</span></p>
                     </div>
                 </div>
             </div>
@@ -1267,7 +1337,7 @@
                             <br>
                             Drone Capture Videos & Photos
                         </p>
-                        <p class="small-price">IDR <span class="small">1.200.000</span></p>
+                        <p class="small-price">SGD <span class="small">120</span></p>
                     </div>
                 </div>
             </div>
@@ -1279,7 +1349,7 @@
                             <br>
                             30 - 45 mins
                         </p>
-                        <p class="small-price">IDR <span class="small">1.200.000/Dive</span></p>
+                        <p class="small-price">SGD <span class="small">120/Dive</span></p>
                     </div>
                 </div>
             </div>
@@ -1288,7 +1358,7 @@
                 <div class="small-card" style="background-image: url('asset/images/sksnorkelling.webp');">
                     <div class="small-overlay text-start">
                         <p>Whale Shark Snorkling</p>
-                        <p class="small-price">IDR <span class="small">500.000</span></p>
+                        <p class="small-price">SGD <span class="small">50</span></p>
                     </div>
                 </div>
             </div>
@@ -1297,7 +1367,7 @@
                 <div class="small-card" style="background-image: url('asset/images/equipment.webp');">
                     <div class="small-overlay text-start">
                         <p>Equipment</p>
-                        <p class="small-price">IDR <span class="small">500.000/Day</span></p>
+                        <p class="small-price">SGD <span class="small">50/Day</span></p>
                     </div>
                 </div>
             </div>
@@ -1306,7 +1376,7 @@
                 <div class="small-card" style="background-image: url('asset/images/fotografer.webp');">
                     <div class="small-overlay text-start">
                         <p>Photographer</p>
-                        <p class="small-price">IDR <span class="small">2.000.000</span></p>
+                        <p class="small-price">SGD <span class="small">200</span></p>
                     </div>
                 </div>
             </div>
@@ -1315,7 +1385,7 @@
                 <div class="small-card" style="background-image: url('asset/images/addons4.webp');">
                     <div class="small-overlay text-start">
                         <p>Cultural Dance</p>
-                        <p class="small-price">IDR <span class="small">2.000.000/Group</span></p>
+                        <p class="small-price">SGD <span class="small">200/Group</span></p>
                     </div>
                 </div>
             </div>
@@ -1324,7 +1394,7 @@
                 <div class="small-card" style="background-image: url('asset/images/addons5.webp');">
                     <div class="small-overlay text-start">
                         <p>Full Body Massage 90 Mins</p>
-                        <p class="small-price">IDR <span class="small">350.000/pax </span></p>
+                        <p class="small-price">SGD <span class="small">50/pax </span></p>
                     </div>
                 </div>
             </div>
@@ -1333,7 +1403,7 @@
                 <div class="small-card" style="background-image: url('asset/images/addons6.webp');">
                     <div class="small-overlay text-start">
                         <p>Horse Riding</p>
-                        <p class="small-price">IDR <span class="small">1.500.000/60mins</span></p>
+                        <p class="small-price">SGD <span class="small">150/60mins</span></p>
                     </div>
                 </div>
             </div>
@@ -1342,7 +1412,7 @@
                 <div class="small-card" style="background-image: url('asset/images/addons7.webp');">
                     <div class="small-overlay text-start">
                         <p>Rattan Factory</p>
-                        <p class="small-price">IDR <span class="small">1.000.000/Group</span></p>
+                        <p class="small-price">SGD <span class="small">100/Group</span></p>
                     </div>
                 </div>
             </div>
