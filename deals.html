@@ -661,9 +661,17 @@
 
         /* Responsif untuk mobile: 1 kolom */
         @media (max-width: 991.98px) {
-        .day-card {
-            flex: 0 0 100%;
-        }
+        .day-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .package-header-title {
+        font-size: 22px;
+    }
+
+    .package-price {
+        font-size: 22px;
+    }
         .navbar-collapse {
           background-color: white;
           padding: 1rem 0;
